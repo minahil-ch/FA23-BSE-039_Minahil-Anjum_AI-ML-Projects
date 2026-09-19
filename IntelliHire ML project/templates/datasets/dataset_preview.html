@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block page_title %}{{ dataset.name }}{% endblock %}
+{% block content %}
+<div class="row g-3 mb-3">
+  <div class="col-md-3"><div class="kpi-card bg-grad-purple"><p>Rows</p><h2>{{ dataset.rows_count }}</h2></div></div>
+  <div class="col-md-3"><div class="kpi-card bg-grad-blue"><p>Columns</p><h2>{{ dataset.columns_count }}</h2></div></div>
+  <div class="col-md-3"><div class="kpi-card bg-grad-orange"><p>Missing Values</p><h2>{{ dataset.missing_values_count }}</h2></div></div>
+  <div class="col-md-3"><div class="kpi-card bg-grad-red"><p>Duplicate Rows</p><h2>{{ dataset.duplicate_rows_count }}</h2></div></div>
+</div>
+
+<div class="card ih-card p-3 mb-3">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h6 class="mb-0">Validation Report</h6>
+    <div>
+      {% if dataset.status != 'CLEANED' %}
+      <a href="{% url 'datasets:clean' dataset.pk %}" class="btn btn-sm btn-success">Clean Dataset</a>
+      {% else %}
+      <a href="{% url 'datasets:download_clean' dataset.pk %}" class="btn btn-sm btn-outline-primary">Download Cleaned CSV</a>
+      {% endif %}
+      <a href="{% url 'ml_engine:training' %}" class="btn btn-sm btn-primary">Go to Model Training</a>
+    </div>
+  </div>
+  {% if report.missing_required_columns %}
+  <div class="alert alert-warning small">Missing recommended columns for ML training: {{ report.missing_required_columns|join:", " }}. The system will fill sensible defaults during training.</div>
+  {% endif %}
+  <p class="small text-muted mb-0">Columns: {{ report.column_names|join:", " }}</p>
+</div>
+
+<div class="card ih-card p-3">
+  <h6>Preview (first 15 rows)</h6>
+  <div class="table-responsive">{{ preview_table|safe }}</div>
+</div>
+{% endblock %}

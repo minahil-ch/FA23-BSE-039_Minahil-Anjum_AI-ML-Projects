@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block page_title %}HR Dashboard{% endblock %}
+{% block content %}
+
+<div class="row g-3 mb-3">
+  <div class="col-md-3"><div class="kpi-card bg-grad-purple"><i class="fa-solid fa-users"></i><p>Total Candidates</p><h2>{{ total_candidates }}</h2></div></div>
+  <div class="col-md-3"><div class="kpi-card bg-grad-green"><i class="fa-solid fa-circle-check"></i><p>Selected</p><h2>{{ selected }}</h2></div></div>
+  <div class="col-md-3"><div class="kpi-card bg-grad-red"><i class="fa-solid fa-circle-xmark"></i><p>Rejected</p><h2>{{ rejected }}</h2></div></div>
+  <div class="col-md-3"><div class="kpi-card bg-grad-blue"><i class="fa-solid fa-percent"></i><p>Hiring Ratio</p><h2>{{ hiring_ratio }}%</h2></div></div>
+</div>
+
+<div class="row g-3 mb-3">
+  <div class="col-md-3"><div class="kpi-card bg-grad-orange"><i class="fa-solid fa-briefcase"></i><p>Avg. Experience</p><h2>{{ avg_experience }} yrs</h2></div></div>
+  <div class="col-md-3"><div class="kpi-card bg-grad-teal"><i class="fa-solid fa-graduation-cap"></i><p>Avg. CGPA</p><h2>{{ avg_cgpa }}</h2></div></div>
+  <div class="col-md-3"><div class="kpi-card bg-grad-purple"><i class="fa-solid fa-database"></i><p>Datasets</p><h2>{{ total_datasets }}</h2></div></div>
+  <div class="col-md-3"><div class="kpi-card bg-grad-green"><i class="fa-solid fa-robot"></i><p>Best Model Accuracy</p>
+    <h2>{% if best_model %}{{ best_model.accuracy|floatformat:2 }}{% else %}--{% endif %}</h2></div></div>
+</div>
+
+<div class="row g-3 mb-3">
+  <div class="col-lg-6">
+    <div class="card ih-card p-3">
+      <h6>Monthly Hiring Trend</h6>
+      <canvas id="monthlyChart" height="180"></canvas>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card ih-card p-3">
+      <h6>Candidate Status Distribution</h6>
+      <canvas id="statusChart" height="180"></canvas>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3 mb-3">
+  <div class="col-lg-6">
+    <div class="card ih-card p-3">
+      <h6>Department Analysis</h6>
+      <canvas id="deptChart" height="180"></canvas>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card ih-card p-3">
+      <h6>Model Accuracy Comparison</h6>
+      <canvas id="modelChart" height="180"></canvas>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3">
+  <div class="col-lg-6">
+    <div class="card ih-card p-3">
+      <h6>Recent Candidates</h6>
+      <table class="table table-sm">
+        <tbody>
+        {% for c in recent_candidates %}
+          <tr><td>{{ c.full_name }}</td><td><span class="badge bg-secondary">{{ c.get_status_display }}</span></td>
+          <td><a href="{% url 'candidates:detail' c.pk %}" class="small">View</a></td></tr>
+        {% empty %}<tr><td class="text-muted">No candidates yet.</td></tr>{% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card ih-card p-3">
+      <h6>Recent Predictions</h6>
+      <table class="table table-sm">
+        <tbody>
+        {% for p in recent_predictions %}
+          <tr><td>{{ p.input_data.first_name }} {{ p.input_data.last_name }}</td>
+          <td><span class="badge {% if p.result == 'SELECTED' %}bg-success{% else %}bg-danger{% endif %}">{{ p.result }}</span></td>
+          <td>{{ p.probability|floatformat:0|default:0 }}%</td></tr>
+        {% empty %}<tr><td class="text-muted">No predictions yet.</td></tr>{% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+new Chart(document.getElementById('monthlyChart'), {
+  type: 'line',
+  data: { labels: {{ monthly_labels|safe }}, datasets: [{ label: 'Applications', data: {{ monthly_counts|safe }},
+    borderColor: '#4f46e5', backgroundColor: 'rgba(79,70,229,0.15)', fill: true, tension: .3 }] },
+  options: { plugins: { legend: { display: false } } }
+});
+new Chart(document.getElementById('statusChart'), {
+  type: 'doughnut',
+  data: { labels: {{ status_labels|safe }}, datasets: [{ data: {{ status_values|safe }},
+    backgroundColor: ['#6366f1','#10b981','#f87171','#fb923c','#38bdf8','#a78bfa','#facc15','#2dd4bf'] }] }
+});
+new Chart(document.getElementById('deptChart'), {
+  type: 'bar',
+  data: { labels: {{ dept_labels|safe }}, datasets: [{ label: 'Candidates', data: {{ dept_values|safe }}, backgroundColor: '#4f46e5' }] },
+  options: { plugins: { legend: { display: false } } }
+});
+new Chart(document.getElementById('modelChart'), {
+  type: 'bar',
+  data: { labels: {{ model_labels|safe }}, datasets: [{ label: 'Accuracy %', data: {{ model_scores|safe }}, backgroundColor: '#10b981' }] },
+  options: { indexAxis: 'y', plugins: { legend: { display: false } } }
+});
+</script>
+{% endblock %}

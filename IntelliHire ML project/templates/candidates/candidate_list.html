@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block page_title %}Candidates{% endblock %}
+{% block content %}
+<div class="card ih-card p-3 mb-3">
+  <form method="get" class="row g-2">
+    <div class="col-md-5"><input type="text" name="q" class="form-control" placeholder="Search by name, email, skills..." value="{{ query }}"></div>
+    <div class="col-md-3">
+      <select name="status" class="form-select">
+        <option value="">All Statuses</option>
+        {% for value, label in status_choices %}
+        <option value="{{ value }}" {% if value == selected_status %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-md-2"><button class="btn btn-primary w-100">Search</button></div>
+    <div class="col-md-2"><a href="{% url 'candidates:add' %}" class="btn btn-success w-100"><i class="fa fa-plus"></i> Add</a></div>
+  </form>
+</div>
+
+<div class="card ih-card p-3">
+  <table class="table table-hover align-middle">
+    <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Department</th><th>Experience</th><th>Status</th><th></th></tr></thead>
+    <tbody>
+    {% for c in candidates %}
+      <tr>
+        <td>{{ c.candidate_id }}</td>
+        <td>{{ c.full_name }}</td>
+        <td>{{ c.email }}</td>
+        <td>{{ c.preferred_department|default:"-" }}</td>
+        <td>{{ c.experience_years }} yrs</td>
+        <td><span class="badge badge-status bg-info text-dark">{{ c.get_status_display }}</span></td>
+        <td>
+          <a href="{% url 'candidates:detail' c.pk %}" class="btn btn-sm btn-outline-primary"><i class="fa fa-eye"></i></a>
+          <a href="{% url 'candidates:edit' c.pk %}" class="btn btn-sm btn-outline-secondary"><i class="fa fa-pen"></i></a>
+          <a href="{% url 'candidates:delete' c.pk %}" class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i></a>
+        </td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="7" class="text-center text-muted py-4">No candidates found.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+  {% if is_paginated %}
+  <nav><ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}<li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Prev</a></li>{% endif %}
+    <li class="page-item disabled"><span class="page-link">{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></li>
+    {% if page_obj.has_next %}<li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>{% endif %}
+  </ul></nav>
+  {% endif %}
+</div>
+{% endblock %}

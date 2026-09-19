@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block auth_content %}
+<div class="d-flex align-items-center justify-content-center" style="min-height:100vh; background:linear-gradient(135deg,#4f46e5,#1e1b3a);">
+  <div class="card ih-card p-4 shadow" style="width: 380px;">
+    <div class="text-center mb-3">
+      <i class="fa-solid fa-brain fa-2x text-primary"></i>
+      <h4 class="mt-2 mb-0">IntelliHire</h4>
+      <small class="text-muted">AI Recruitment & Candidate Screening Platform</small>
+    </div>
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="mb-3">
+          <label class="form-label">{{ field.label }}</label>
+          {{ field }}
+          {% for error in field.errors %}<div class="text-danger small">{{ error }}</div>{% endfor %}
+        </div>
+      {% endfor %}
+      {% if form.non_field_errors %}<div class="text-danger small mb-2">{{ form.non_field_errors }}</div>{% endif %}
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+    <p class="text-center mt-3 mb-0 small">No account? <a href="{% url 'accounts:register' %}">Register here</a></p>
+  </div>
+</div>
+{% endblock %}

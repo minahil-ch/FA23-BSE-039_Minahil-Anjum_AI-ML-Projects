@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block page_title %}My Profile{% endblock %}
+{% block content %}
+<div class="card ih-card p-4" style="max-width:600px;">
+  <h5>{{ profile_user.get_full_name|default:profile_user.username }}</h5>
+  <p class="text-muted mb-3">{{ profile_user.get_role_display }}</p>
+  <table class="table table-sm">
+    <tr><th>Username</th><td>{{ profile_user.username }}</td></tr>
+    <tr><th>Email</th><td>{{ profile_user.email }}</td></tr>
+    <tr><th>Phone</th><td>{{ profile_user.phone_number|default:"-" }}</td></tr>
+    <tr><th>Department</th><td>{{ profile_user.department|default:"-" }}</td></tr>
+    <tr><th>Joined</th><td>{{ profile_user.date_joined|date:"M d, Y" }}</td></tr>
+  </table>
+  <a href="{% url 'accounts:profile_edit' %}" class="btn btn-primary">Edit Profile</a>
+</div>
+{% endblock %}

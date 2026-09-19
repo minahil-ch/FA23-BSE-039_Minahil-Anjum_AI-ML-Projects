@@ -1,0 +1,301 @@
+first_name,last_name,email,phone_number,gender,highest_qualification,university,graduation_year,cgpa,experience_years,preferred_department,technical_skills,technical_skills_count,communication_score,interview_score,expected_salary,qualification_level,selected
+Hina,Iqbal,hina.iqbal1000@example.com,3153936092,F,master,Sample University,2021,2.65,2.2,Human Resources,"JavaScript, AWS, React, Python, SQL, Django",6,78,82,156350,4,0
+Farhan,Sheikh,farhan.sheikh1001@example.com,3983107923,M,diploma,Sample University,2016,3.14,7.9,Sales,SQL,1,82,25,38079,2,0
+Farhan,Chaudhry,farhan.chaudhry1002@example.com,3170850742,M,intermediate,Sample University,2023,3.38,2.8,Sales,"Django, Docker, SQL, Communication, Excel, Python",6,30,94,32183,2,1
+Usman,Sheikh,usman.sheikh1003@example.com,3167358741,M,bachelor,Sample University,2019,3.71,11.0,Sales,"Excel, AWS, JavaScript",3,93,25,37309,3,1
+Farhan,Chaudhry,farhan.chaudhry1004@example.com,3185440740,M,intermediate,Sample University,2023,3.91,4.0,Software Engineering,"Excel, Communication, SQL, Python, AWS, Data Analysis",6,52,47,47092,2,1
+Iqra,Malik,iqra.malik1005@example.com,3426664686,M,master,Sample University,2017,2.34,4.4,Data Science,Excel,1,40,27,131245,4,0
+Omar,Iqbal,omar.iqbal1006@example.com,3757812905,F,phd,Sample University,2018,2.64,10.4,Software Engineering,"Data Analysis, SQL, Django",3,79,76,146099,5,1
+Farhan,Malik,farhan.malik1007@example.com,3841495959,M,phd,Sample University,2024,3.25,2.9,Sales,"JavaScript, Data Analysis, Django, Machine Learning",4,98,32,64173,5,0
+Danish,Sheikh,danish.sheikh1008@example.com,3919941580,F,phd,Sample University,2021,2.29,10.0,Human Resources,"SQL, Docker",2,81,57,50592,5,1
+Ali,Raza,ali.raza1009@example.com,3342637299,F,master,Sample University,2021,2.72,6.9,Sales,"Communication, Excel, JavaScript",3,54,31,141794,4,0
+Bilal,Chaudhry,bilal.chaudhry1010@example.com,3521605361,F,bachelor,Sample University,2020,2.8,11.9,Software Engineering,"Django, SQL, Docker",3,79,22,35132,3,1
+Omar,Farooq,omar.farooq1011@example.com,3367817384,M,diploma,Sample University,2017,3.41,0.9,Sales,"JavaScript, React, Data Analysis",3,61,98,188307,2,0
+Ali,Chaudhry,ali.chaudhry1012@example.com,3227646228,M,phd,Sample University,2024,2.78,11.7,Data Science,"Communication, React, AWS, Java",4,38,24,63781,5,1
+Hina,Chaudhry,hina.chaudhry1013@example.com,3684346831,F,phd,Sample University,2025,2.73,8.9,Data Science,"JavaScript, Machine Learning, Python, Java, Communication, Django",6,31,75,142110,5,1
+Usman,Butt,usman.butt1014@example.com,3619663522,M,diploma,Sample University,2022,3.91,7.5,Human Resources,"React, Data Analysis, Communication, AWS, JavaScript, SQL",6,49,58,31286,2,1
+Omar,Malik,omar.malik1015@example.com,3574187118,M,diploma,Sample University,2023,3.09,7.7,Marketing,Communication,1,88,40,146703,2,0
+Zara,Butt,zara.butt1016@example.com,3373313153,F,bachelor,Sample University,2017,3.08,4.7,Marketing,"Data Analysis, SQL, AWS",3,38,36,162075,3,0
+Bilal,Raza,bilal.raza1017@example.com,3355813595,M,phd,Sample University,2018,3.38,5.0,Data Science,"Communication, JavaScript",2,31,35,175672,5,0
+Farhan,Butt,farhan.butt1018@example.com,3509339328,M,master,Sample University,2025,2.68,5.5,Data Science,"React, Excel, Java",3,94,74,45888,4,0
+Danish,Khan,danish.khan1019@example.com,3245431985,F,bachelor,Sample University,2024,2.95,3.9,Software Engineering,"Python, React, Data Analysis, Java, JavaScript, Machine Learning",6,77,72,153436,3,1
+Usman,Raza,usman.raza1020@example.com,3162186219,M,master,Sample University,2019,3.34,8.5,Human Resources,"Communication, Excel, React, Data Analysis, AWS, Python",6,80,75,126390,4,1
+Ayesha,Khan,ayesha.khan1021@example.com,3181684923,M,bachelor,Sample University,2022,3.91,4.4,Finance,Django,1,83,39,198358,3,0
+Ali,Butt,ali.butt1022@example.com,3939721499,M,diploma,Sample University,2017,2.41,4.8,Sales,"Data Analysis, Excel, React, Python",4,78,56,44689,2,0
+Zara,Farooq,zara.farooq1023@example.com,3635929200,M,intermediate,Sample University,2023,3.68,3.6,Human Resources,"Excel, Data Analysis, SQL, Communication, JavaScript, Django",6,44,34,128419,2,0
+Bilal,Sheikh,bilal.sheikh1024@example.com,3564527450,M,intermediate,Sample University,2025,2.55,4.6,Finance,"Python, Machine Learning, React",3,82,24,107686,2,0
+Sara,Chaudhry,sara.chaudhry1025@example.com,3243658977,F,intermediate,Sample University,2020,2.42,1.7,Sales,Data Analysis,1,53,38,88862,2,0
+Bilal,Chaudhry,bilal.chaudhry1026@example.com,3326070862,F,bachelor,Sample University,2019,3.3,4.9,Data Science,"Docker, AWS, Machine Learning, Django, SQL, Communication",6,61,95,84848,3,1
+Hamza,Farooq,hamza.farooq1027@example.com,3527662169,M,bachelor,Sample University,2018,2.64,0.0,Software Engineering,"Java, Excel, Django, React, Data Analysis",5,36,67,148145,3,0
+Omar,Malik,omar.malik1028@example.com,3718385114,F,bachelor,Sample University,2025,2.87,0.8,Human Resources,"JavaScript, AWS",2,50,99,79510,3,0
+Farhan,Iqbal,farhan.iqbal1029@example.com,3627479100,M,intermediate,Sample University,2017,3.89,0.4,Finance,"Machine Learning, Java",2,72,65,172473,2,0
+Ahmed,Farooq,ahmed.farooq1030@example.com,3937812115,F,phd,Sample University,2016,2.45,1.2,Sales,"JavaScript, Java, Docker, Data Analysis, Python, Excel",6,96,48,85147,5,0
+Hamza,Farooq,hamza.farooq1031@example.com,3142967752,F,bachelor,Sample University,2016,2.67,2.7,Human Resources,"Excel, AWS, JavaScript, Java",4,80,64,187625,3,1
+Bilal,Malik,bilal.malik1032@example.com,3892464284,M,bachelor,Sample University,2025,3.78,3.3,Human Resources,"AWS, JavaScript, Data Analysis, Django, React",5,94,27,155237,3,1
+Danish,Butt,danish.butt1033@example.com,3294643980,F,intermediate,Sample University,2020,2.67,5.9,Human Resources,"React, Excel, Java, Docker, Machine Learning, Communication",6,31,74,173184,2,0
+Fatima,Butt,fatima.butt1034@example.com,3851677135,M,phd,Sample University,2021,2.95,1.2,Software Engineering,"JavaScript, Machine Learning, React, SQL",4,34,55,85071,5,0
+Ayesha,Malik,ayesha.malik1035@example.com,3476709309,F,diploma,Sample University,2018,3.14,7.7,Data Science,"Docker, Java, Excel, Data Analysis, Python",5,43,37,173279,2,0
+Sara,Farooq,sara.farooq1036@example.com,3748383583,F,phd,Sample University,2019,2.76,8.4,Human Resources,"React, JavaScript, SQL, Machine Learning, Data Analysis",5,52,36,34463,5,0
+Mahnoor,Raza,mahnoor.raza1037@example.com,3957171857,F,bachelor,Sample University,2017,3.29,9.9,Sales,"Java, JavaScript",2,55,74,188854,3,1
+Farhan,Butt,farhan.butt1038@example.com,3857881234,F,intermediate,Sample University,2022,3.95,1.7,Software Engineering,"Django, SQL, Docker",3,78,61,33527,2,1
+Usman,Farooq,usman.farooq1039@example.com,3989203641,F,phd,Sample University,2023,3.72,4.0,Human Resources,"Excel, React, Machine Learning",3,50,42,85007,5,0
+Ayesha,Chaudhry,ayesha.chaudhry1040@example.com,3678280591,M,master,Sample University,2023,3.83,8.7,Data Science,"Data Analysis, React, Python, Machine Learning, AWS, Excel",6,32,100,102637,4,1
+Sana,Butt,sana.butt1041@example.com,3795114283,F,bachelor,Sample University,2018,2.47,7.4,Finance,"Docker, Machine Learning, Java",3,99,23,113274,3,0
+Ayesha,Malik,ayesha.malik1042@example.com,3855338147,F,diploma,Sample University,2023,2.63,3.7,Data Science,"JavaScript, React, SQL, Django, Docker",5,96,87,144909,2,1
+Bilal,Khan,bilal.khan1043@example.com,3995336248,M,phd,Sample University,2022,2.59,11.8,Software Engineering,"SQL, Excel, Communication, JavaScript",4,62,28,126150,5,1
+Ahmed,Raza,ahmed.raza1044@example.com,3489432173,M,phd,Sample University,2025,3.54,11.1,Marketing,"AWS, Data Analysis, SQL, Docker",4,30,35,158122,5,0
+Usman,Iqbal,usman.iqbal1045@example.com,3568146660,F,intermediate,Sample University,2019,2.75,1.6,Data Science,"Excel, JavaScript, React",3,42,93,172361,2,0
+Mahnoor,Iqbal,mahnoor.iqbal1046@example.com,3171779304,F,master,Sample University,2022,3.99,6.2,Data Science,"Django, Data Analysis, SQL",3,57,100,123473,4,1
+Hamza,Butt,hamza.butt1047@example.com,3584788406,M,bachelor,Sample University,2021,2.93,3.4,Finance,"Java, Docker, SQL, Communication, React",5,77,64,152028,3,0
+Fatima,Chaudhry,fatima.chaudhry1048@example.com,3214485098,M,intermediate,Sample University,2020,2.31,7.2,Human Resources,"AWS, Excel, SQL, Java",4,86,45,167846,2,1
+Farhan,Malik,farhan.malik1049@example.com,3852724109,M,intermediate,Sample University,2023,3.9,7.0,Finance,Django,1,69,93,199023,2,1
+Ahmed,Khan,ahmed.khan1050@example.com,3221792446,M,phd,Sample University,2023,2.54,2.5,Human Resources,"Java, React",2,73,92,72790,5,0
+Omar,Khan,omar.khan1051@example.com,3435232927,F,diploma,Sample University,2024,3.98,10.3,Software Engineering,"Data Analysis, React, Communication, AWS, Django",5,55,90,117222,2,1
+Mahnoor,Sheikh,mahnoor.sheikh1052@example.com,3353361398,M,diploma,Sample University,2025,3.89,4.1,Human Resources,"React, Docker, Excel, AWS, JavaScript",5,62,27,142789,2,0
+Sana,Farooq,sana.farooq1053@example.com,3158895533,M,intermediate,Sample University,2017,2.75,11.5,Finance,"React, SQL, JavaScript, Java, Django, Docker",6,34,22,130011,2,0
+Sara,Raza,sara.raza1054@example.com,3358848460,M,intermediate,Sample University,2017,2.22,1.0,Human Resources,"Java, Data Analysis, Excel",3,85,78,163510,2,0
+Hina,Sheikh,hina.sheikh1055@example.com,3384467287,M,master,Sample University,2023,3.0,10.7,Human Resources,"SQL, Machine Learning",2,72,43,147008,4,1
+Farhan,Malik,farhan.malik1056@example.com,3408157419,M,diploma,Sample University,2020,3.68,1.8,Software Engineering,Excel,1,95,96,59969,2,1
+Hamza,Khan,hamza.khan1057@example.com,3432620429,M,master,Sample University,2016,2.97,7.9,Sales,"React, Java, Machine Learning, Communication",4,72,92,93972,4,1
+Mahnoor,Malik,mahnoor.malik1058@example.com,3796928553,F,phd,Sample University,2023,2.25,11.7,Finance,"Communication, React, Machine Learning",3,88,59,150153,5,1
+Omar,Malik,omar.malik1059@example.com,3644730798,M,master,Sample University,2018,3.88,10.9,Human Resources,"Excel, Java, Communication",3,88,58,138982,4,1
+Bilal,Malik,bilal.malik1060@example.com,3212011615,M,phd,Sample University,2016,3.43,3.1,Software Engineering,"Java, React, Data Analysis, Machine Learning",4,61,93,47590,5,0
+Ahmed,Iqbal,ahmed.iqbal1061@example.com,3251734738,M,intermediate,Sample University,2021,2.25,2.7,Data Science,"JavaScript, Python, Django, React, Excel, Data Analysis",6,46,21,41535,2,0
+Fatima,Raza,fatima.raza1062@example.com,3691311428,M,intermediate,Sample University,2021,2.26,11.7,Data Science,"AWS, Excel, Django, Machine Learning, Python",5,74,69,139318,2,1
+Iqra,Sheikh,iqra.sheikh1063@example.com,3619461606,M,bachelor,Sample University,2022,2.82,3.4,Finance,"JavaScript, Machine Learning, AWS, Java",4,81,21,122645,3,0
+Mahnoor,Sheikh,mahnoor.sheikh1064@example.com,3280603107,F,intermediate,Sample University,2019,3.63,1.6,Data Science,"Data Analysis, React",2,79,22,171546,2,0
+Ali,Iqbal,ali.iqbal1065@example.com,3839467164,M,phd,Sample University,2016,2.6,1.0,Data Science,"Machine Learning, Excel, Python, Django, JavaScript",5,47,73,135806,5,0
+Usman,Raza,usman.raza1066@example.com,3640689162,F,bachelor,Sample University,2018,3.1,1.6,Data Science,"Docker, Communication, Excel",3,35,87,54473,3,0
+Hamza,Butt,hamza.butt1067@example.com,3385592885,F,intermediate,Sample University,2016,2.49,11.8,Software Engineering,"React, Python",2,44,81,164724,2,0
+Ahmed,Malik,ahmed.malik1068@example.com,3737166532,F,bachelor,Sample University,2025,2.32,9.6,Sales,"AWS, Java, React, Docker",4,47,74,31046,3,0
+Farhan,Farooq,farhan.farooq1069@example.com,3386690888,F,phd,Sample University,2018,2.67,9.8,Finance,"JavaScript, AWS, Data Analysis, Communication, Docker",5,86,46,40168,5,1
+Ali,Chaudhry,ali.chaudhry1070@example.com,3835927439,F,diploma,Sample University,2018,3.25,3.9,Sales,"Docker, Excel, Data Analysis, JavaScript, React, AWS",6,50,86,127953,2,0
+Mahnoor,Farooq,mahnoor.farooq1071@example.com,3958182289,F,intermediate,Sample University,2025,3.69,2.7,Human Resources,"Python, Data Analysis, Communication, Django, Machine Learning, JavaScript",6,84,26,172736,2,0
+Fatima,Raza,fatima.raza1072@example.com,3750190476,F,bachelor,Sample University,2024,2.36,5.6,Marketing,SQL,1,77,75,133886,3,0
+Zara,Malik,zara.malik1073@example.com,3349900368,M,master,Sample University,2018,3.86,10.7,Software Engineering,"Java, AWS, Data Analysis, Machine Learning, Docker",5,72,21,185070,4,1
+Mahnoor,Chaudhry,mahnoor.chaudhry1074@example.com,3314907621,M,phd,Sample University,2019,3.02,6.6,Human Resources,Django,1,73,95,196787,5,0
+Fatima,Iqbal,fatima.iqbal1075@example.com,3647873924,M,diploma,Sample University,2019,2.93,10.5,Human Resources,SQL,1,96,20,185136,2,1
+Iqra,Chaudhry,iqra.chaudhry1076@example.com,3776855755,F,bachelor,Sample University,2022,2.6,4.0,Software Engineering,"Python, AWS, Data Analysis, Excel, Docker",5,37,74,115130,3,0
+Farhan,Butt,farhan.butt1077@example.com,3757616107,M,master,Sample University,2023,3.19,2.3,Finance,"JavaScript, React, Docker",3,81,71,111641,4,0
+Farhan,Raza,farhan.raza1078@example.com,3893277734,M,intermediate,Sample University,2018,3.48,10.1,Sales,Docker,1,98,60,98447,2,1
+Hina,Sheikh,hina.sheikh1079@example.com,3161243812,F,master,Sample University,2017,2.26,8.6,Human Resources,"Java, JavaScript",2,92,42,49206,4,1
+Ayesha,Butt,ayesha.butt1080@example.com,3811304180,M,phd,Sample University,2017,3.81,1.8,Sales,"Docker, Python, JavaScript",3,59,34,120277,5,0
+Usman,Raza,usman.raza1081@example.com,3281911920,F,intermediate,Sample University,2024,2.81,10.3,Sales,SQL,1,81,39,36151,2,1
+Danish,Farooq,danish.farooq1082@example.com,3778575818,M,phd,Sample University,2021,3.07,6.6,Finance,"Django, SQL, React",3,31,28,99714,5,0
+Ali,Farooq,ali.farooq1083@example.com,3515620953,F,master,Sample University,2022,3.4,6.1,Finance,"Excel, Django, AWS, Docker, JavaScript",5,45,83,152905,4,0
+Bilal,Sheikh,bilal.sheikh1084@example.com,3761203662,F,intermediate,Sample University,2024,2.5,10.3,Marketing,"Docker, Machine Learning",2,83,30,187479,2,1
+Usman,Sheikh,usman.sheikh1085@example.com,3640564607,F,phd,Sample University,2019,3.08,11.1,Finance,"Data Analysis, Docker, Machine Learning",3,52,72,136848,5,1
+Mahnoor,Raza,mahnoor.raza1086@example.com,3617423836,F,intermediate,Sample University,2023,2.56,9.8,Marketing,"Excel, Docker, Python, Communication, Machine Learning",5,41,34,52245,2,0
+Hina,Farooq,hina.farooq1087@example.com,3572495334,F,diploma,Sample University,2023,2.37,7.5,Marketing,"Python, Data Analysis, AWS, Java",4,92,53,54610,2,1
+Ahmed,Raza,ahmed.raza1088@example.com,3577737077,M,diploma,Sample University,2017,3.98,6.8,Software Engineering,Excel,1,77,44,85459,2,0
+Usman,Farooq,usman.farooq1089@example.com,3514381198,M,master,Sample University,2019,2.87,9.7,Human Resources,"Machine Learning, JavaScript, Docker, SQL, Data Analysis, Python",6,46,95,120848,4,1
+Bilal,Malik,bilal.malik1090@example.com,3310021323,M,bachelor,Sample University,2025,3.57,2.3,Data Science,"SQL, Communication, Django, Docker, Data Analysis",5,95,69,41740,3,0
+Usman,Chaudhry,usman.chaudhry1091@example.com,3539898561,M,diploma,Sample University,2018,3.17,2.8,Finance,"Python, Docker, Excel",3,35,86,42350,2,0
+Danish,Sheikh,danish.sheikh1092@example.com,3829371205,M,intermediate,Sample University,2024,3.79,10.6,Sales,"Excel, Python, AWS, Machine Learning",4,31,20,185682,2,1
+Ali,Iqbal,ali.iqbal1093@example.com,3715648161,F,bachelor,Sample University,2022,3.93,9.6,Software Engineering,"Machine Learning, React, Data Analysis, JavaScript, Docker",5,52,22,67621,3,1
+Farhan,Farooq,farhan.farooq1094@example.com,3353606742,F,phd,Sample University,2023,2.79,1.9,Software Engineering,"Django, Java, Machine Learning, React, Docker",5,38,85,162412,5,0
+Farhan,Chaudhry,farhan.chaudhry1095@example.com,3805697020,M,phd,Sample University,2022,3.28,6.0,Data Science,"Java, JavaScript",2,58,100,58849,5,1
+Hamza,Chaudhry,hamza.chaudhry1096@example.com,3254892194,M,diploma,Sample University,2018,2.86,8.0,Sales,"SQL, React, Machine Learning, Python, Java, Docker",6,90,79,134382,2,1
+Fatima,Raza,fatima.raza1097@example.com,3699393709,F,phd,Sample University,2018,3.43,11.2,Marketing,Docker,1,100,66,111154,5,1
+Hina,Iqbal,hina.iqbal1098@example.com,3422944209,F,phd,Sample University,2023,2.65,10.6,Human Resources,"Communication, Python, Java, Excel",4,82,40,91273,5,1
+Sana,Khan,sana.khan1099@example.com,3731375862,M,bachelor,Sample University,2017,3.64,8.1,Human Resources,"Django, Data Analysis, Java, Communication",4,36,75,30152,3,1
+Hamza,Iqbal,hamza.iqbal1100@example.com,3190546305,F,intermediate,Sample University,2021,3.17,7.0,Marketing,"Docker, Data Analysis, React, JavaScript, SQL, Excel",6,91,98,155461,2,1
+Omar,Farooq,omar.farooq1101@example.com,3871744482,F,bachelor,Sample University,2023,3.5,8.2,Data Science,"Django, React, Machine Learning, Python, JavaScript",5,95,26,128296,3,1
+Sana,Raza,sana.raza1102@example.com,3428914123,M,bachelor,Sample University,2018,3.89,10.4,Marketing,"JavaScript, Java",2,69,67,170770,3,1
+Danish,Sheikh,danish.sheikh1103@example.com,3560647353,M,diploma,Sample University,2021,3.89,10.7,Sales,"Django, JavaScript",2,98,41,79218,2,1
+Danish,Iqbal,danish.iqbal1104@example.com,3770118730,F,diploma,Sample University,2016,3.88,4.4,Sales,"Java, Excel, Python, Docker",4,37,44,136686,2,0
+Farhan,Farooq,farhan.farooq1105@example.com,3691386919,F,bachelor,Sample University,2019,2.67,2.8,Marketing,"SQL, Python",2,100,80,99039,3,1
+Farhan,Malik,farhan.malik1106@example.com,3263875049,M,phd,Sample University,2024,2.85,3.5,Data Science,"Communication, Python, Java, React, JavaScript",5,38,76,133495,5,0
+Ali,Khan,ali.khan1107@example.com,3369638220,M,phd,Sample University,2023,3.8,1.3,Data Science,"Docker, Java, Django, SQL",4,33,57,159994,5,0
+Bilal,Sheikh,bilal.sheikh1108@example.com,3176950717,M,master,Sample University,2025,3.08,4.2,Finance,"Excel, JavaScript, React",3,49,42,183321,4,0
+Sara,Sheikh,sara.sheikh1109@example.com,3485583021,M,phd,Sample University,2018,2.39,2.8,Marketing,"Java, Communication, AWS",3,82,83,92917,5,0
+Farhan,Chaudhry,farhan.chaudhry1110@example.com,3833283691,M,phd,Sample University,2019,2.4,1.6,Finance,SQL,1,77,99,170419,5,0
+Zara,Chaudhry,zara.chaudhry1111@example.com,3537053446,M,master,Sample University,2016,3.1,0.5,Finance,"Django, Docker",2,35,78,189745,4,0
+Ali,Farooq,ali.farooq1112@example.com,3678734305,M,bachelor,Sample University,2018,3.39,0.5,Human Resources,"Java, SQL, Machine Learning, Excel, JavaScript, AWS",6,30,90,59433,3,0
+Bilal,Sheikh,bilal.sheikh1113@example.com,3268071883,M,master,Sample University,2019,2.36,6.5,Software Engineering,Communication,1,82,20,63958,4,0
+Hina,Butt,hina.butt1114@example.com,3452792598,F,diploma,Sample University,2017,3.69,1.3,Finance,"Communication, Django",2,37,95,135403,2,0
+Fatima,Iqbal,fatima.iqbal1115@example.com,3871209836,M,intermediate,Sample University,2024,3.9,0.4,Software Engineering,"JavaScript, Communication, Django",3,59,83,157602,2,0
+Mahnoor,Raza,mahnoor.raza1116@example.com,3336175688,F,intermediate,Sample University,2020,3.48,6.6,Software Engineering,Machine Learning,1,36,63,87712,2,0
+Usman,Khan,usman.khan1117@example.com,3989333640,F,diploma,Sample University,2024,3.36,2.0,Sales,Python,1,52,98,190961,2,0
+Ayesha,Farooq,ayesha.farooq1118@example.com,3709509920,M,phd,Sample University,2023,2.53,1.9,Human Resources,React,1,89,74,186910,5,0
+Fatima,Butt,fatima.butt1119@example.com,3701509714,M,intermediate,Sample University,2024,3.19,2.7,Software Engineering,"Data Analysis, Excel, Docker",3,58,83,66579,2,1
+Zara,Butt,zara.butt1120@example.com,3880254645,F,intermediate,Sample University,2024,3.0,8.5,Human Resources,"Docker, Python",2,84,89,111471,2,1
+Ahmed,Sheikh,ahmed.sheikh1121@example.com,3702124994,M,intermediate,Sample University,2020,3.99,0.6,Data Science,"AWS, Python, Communication",3,46,50,86030,2,0
+Ahmed,Farooq,ahmed.farooq1122@example.com,3554074534,F,intermediate,Sample University,2023,2.44,0.7,Marketing,"SQL, React",2,55,53,187419,2,0
+Iqra,Sheikh,iqra.sheikh1123@example.com,3881004508,M,phd,Sample University,2020,2.44,6.4,Finance,"JavaScript, Java, SQL",3,53,98,81790,5,1
+Ayesha,Malik,ayesha.malik1124@example.com,3790411416,F,bachelor,Sample University,2017,3.23,10.3,Finance,"Communication, JavaScript",2,78,79,85003,3,1
+Zara,Iqbal,zara.iqbal1125@example.com,3936277397,F,phd,Sample University,2023,2.64,11.0,Marketing,React,1,77,86,65384,5,1
+Mahnoor,Butt,mahnoor.butt1126@example.com,3622623044,M,diploma,Sample University,2016,2.42,5.0,Human Resources,"JavaScript, Docker",2,92,95,141633,2,1
+Ali,Chaudhry,ali.chaudhry1127@example.com,3872209894,F,master,Sample University,2019,2.96,3.9,Human Resources,"Django, Java",2,87,28,145203,4,0
+Sara,Malik,sara.malik1128@example.com,3910127141,M,intermediate,Sample University,2016,3.74,2.9,Human Resources,"Docker, Data Analysis",2,100,97,117845,2,1
+Hamza,Malik,hamza.malik1129@example.com,3881366173,F,intermediate,Sample University,2023,3.18,2.2,Data Science,Machine Learning,1,41,47,68883,2,0
+Hina,Butt,hina.butt1130@example.com,3280853068,M,bachelor,Sample University,2019,2.26,11.1,Data Science,"Data Analysis, Python, JavaScript, Machine Learning, SQL",5,56,100,33137,3,1
+Mahnoor,Chaudhry,mahnoor.chaudhry1131@example.com,3607475898,F,bachelor,Sample University,2021,3.9,2.6,Marketing,Django,1,53,61,158401,3,0
+Ali,Khan,ali.khan1132@example.com,3153539334,F,bachelor,Sample University,2018,3.05,1.1,Software Engineering,React,1,37,34,139657,3,0
+Mahnoor,Farooq,mahnoor.farooq1133@example.com,3526716846,M,intermediate,Sample University,2024,2.51,7.8,Marketing,"Data Analysis, Docker, Java",3,38,92,50748,2,0
+Farhan,Iqbal,farhan.iqbal1134@example.com,3496918033,M,diploma,Sample University,2017,3.71,11.7,Data Science,"Java, Excel",2,75,77,188813,2,1
+Hina,Farooq,hina.farooq1135@example.com,3375291394,M,master,Sample University,2017,3.67,8.6,Finance,Python,1,81,60,69455,4,1
+Hina,Raza,hina.raza1136@example.com,3935661264,F,intermediate,Sample University,2016,3.96,0.8,Marketing,AWS,1,44,25,34468,2,0
+Bilal,Raza,bilal.raza1137@example.com,3209566034,M,master,Sample University,2016,2.76,4.5,Sales,"React, Django",2,67,70,30902,4,0
+Mahnoor,Khan,mahnoor.khan1138@example.com,3734201662,F,intermediate,Sample University,2018,2.26,9.7,Finance,"Java, Python, Django, React",4,100,88,136414,2,1
+Hamza,Chaudhry,hamza.chaudhry1139@example.com,3991197611,M,phd,Sample University,2022,3.61,7.6,Human Resources,"Java, Communication",2,81,88,196503,5,1
+Ali,Iqbal,ali.iqbal1140@example.com,3288153308,M,master,Sample University,2020,2.27,2.7,Software Engineering,JavaScript,1,86,86,53490,4,0
+Hamza,Raza,hamza.raza1141@example.com,3665390103,F,intermediate,Sample University,2018,3.09,1.8,Sales,"React, Python",2,70,45,38295,2,0
+Fatima,Butt,fatima.butt1142@example.com,3801511035,F,bachelor,Sample University,2016,2.57,5.7,Human Resources,"Data Analysis, React, AWS",3,77,72,52943,3,0
+Usman,Iqbal,usman.iqbal1143@example.com,3363567140,M,master,Sample University,2018,3.01,2.5,Data Science,Docker,1,42,43,115995,4,0
+Usman,Farooq,usman.farooq1144@example.com,3573308263,F,phd,Sample University,2022,3.25,3.7,Data Science,"Django, Java",2,54,60,43699,5,0
+Farhan,Khan,farhan.khan1145@example.com,3202603037,M,diploma,Sample University,2018,2.55,9.3,Sales,"Docker, Django, SQL, Data Analysis, Java, Python",6,62,100,94044,2,1
+Ahmed,Butt,ahmed.butt1146@example.com,3303537955,F,phd,Sample University,2022,3.69,7.6,Software Engineering,"Communication, SQL, Java, AWS, Excel, JavaScript",6,84,47,42910,5,1
+Sana,Chaudhry,sana.chaudhry1147@example.com,3473116937,M,phd,Sample University,2020,3.61,2.7,Software Engineering,"JavaScript, Machine Learning, Django",3,30,54,137505,5,0
+Ali,Farooq,ali.farooq1148@example.com,3899897738,F,diploma,Sample University,2023,2.52,1.8,Finance,SQL,1,90,45,189071,2,0
+Sara,Farooq,sara.farooq1149@example.com,3496634709,F,phd,Sample University,2025,3.13,0.3,Finance,React,1,100,41,97862,5,0
+Zara,Chaudhry,zara.chaudhry1150@example.com,3639097762,M,master,Sample University,2020,2.55,0.8,Sales,React,1,65,86,192105,4,0
+Ahmed,Iqbal,ahmed.iqbal1151@example.com,3510450855,F,master,Sample University,2022,3.61,10.4,Human Resources,"Python, Django, React, Excel, Data Analysis",5,87,84,60809,4,1
+Hamza,Sheikh,hamza.sheikh1152@example.com,3247572126,M,intermediate,Sample University,2017,2.98,7.3,Marketing,"Machine Learning, AWS",2,43,87,37404,2,0
+Hamza,Farooq,hamza.farooq1153@example.com,3832628074,F,bachelor,Sample University,2016,2.49,1.9,Human Resources,"React, Excel, Django, SQL",4,66,42,72524,3,0
+Ayesha,Farooq,ayesha.farooq1154@example.com,3245308374,M,phd,Sample University,2023,3.86,8.6,Data Science,"Machine Learning, React, Django, Python, Excel",5,49,56,75346,5,1
+Danish,Khan,danish.khan1155@example.com,3873891334,M,phd,Sample University,2020,3.89,0.6,Human Resources,React,1,30,21,126904,5,0
+Ali,Raza,ali.raza1156@example.com,3935887112,M,bachelor,Sample University,2020,2.66,8.7,Human Resources,"AWS, SQL, Machine Learning, Python, Docker",5,89,27,30252,3,0
+Hamza,Iqbal,hamza.iqbal1157@example.com,3978249050,F,master,Sample University,2024,3.09,4.8,Data Science,"React, Machine Learning, Django, Java, Docker, Data Analysis",6,40,97,57522,4,0
+Omar,Chaudhry,omar.chaudhry1158@example.com,3717263429,M,master,Sample University,2019,3.27,10.6,Marketing,SQL,1,34,81,167049,4,1
+Farhan,Sheikh,farhan.sheikh1159@example.com,3599723227,F,phd,Sample University,2024,3.34,0.9,Software Engineering,Data Analysis,1,51,21,85211,5,0
+Bilal,Farooq,bilal.farooq1160@example.com,3997634840,F,intermediate,Sample University,2023,3.5,1.5,Sales,"React, Docker, AWS",3,56,20,32655,2,0
+Omar,Chaudhry,omar.chaudhry1161@example.com,3272337176,F,bachelor,Sample University,2023,2.8,4.3,Finance,"React, Communication, JavaScript, Data Analysis, Machine Learning",5,79,36,58032,3,0
+Omar,Raza,omar.raza1162@example.com,3364788551,M,phd,Sample University,2019,3.79,3.3,Software Engineering,"AWS, Docker, Communication, Data Analysis",4,85,33,83507,5,0
+Mahnoor,Sheikh,mahnoor.sheikh1163@example.com,3974451498,M,master,Sample University,2017,2.78,7.2,Marketing,"Docker, Communication, AWS, Python, React",5,70,71,170786,4,1
+Fatima,Farooq,fatima.farooq1164@example.com,3367561040,F,master,Sample University,2023,3.49,1.7,Human Resources,"Machine Learning, SQL, Python, Docker, Django",5,60,59,54342,4,0
+Omar,Chaudhry,omar.chaudhry1165@example.com,3887761009,F,master,Sample University,2024,2.88,5.7,Finance,Django,1,34,35,182644,4,0
+Bilal,Chaudhry,bilal.chaudhry1166@example.com,3111901062,M,diploma,Sample University,2021,2.26,11.0,Marketing,"Communication, Python, Data Analysis, Excel",4,44,84,178045,2,1
+Ahmed,Butt,ahmed.butt1167@example.com,3212092734,F,intermediate,Sample University,2020,2.65,9.7,Data Science,Excel,1,84,29,44471,2,1
+Sara,Farooq,sara.farooq1168@example.com,3570017378,F,phd,Sample University,2016,2.69,9.7,Software Engineering,"Python, Excel, React, JavaScript, Django, Machine Learning",6,85,44,173020,5,1
+Sara,Farooq,sara.farooq1169@example.com,3245618353,M,master,Sample University,2025,3.36,8.1,Marketing,"Machine Learning, Communication",2,91,39,164011,4,1
+Farhan,Chaudhry,farhan.chaudhry1170@example.com,3807124834,F,bachelor,Sample University,2024,2.89,7.1,Finance,"Excel, SQL, Docker, Java, Python, AWS",6,87,70,182691,3,1
+Ayesha,Khan,ayesha.khan1171@example.com,3933734905,F,master,Sample University,2017,2.22,2.8,Sales,JavaScript,1,86,30,197871,4,0
+Fatima,Farooq,fatima.farooq1172@example.com,3333575769,F,phd,Sample University,2020,2.76,10.4,Software Engineering,"SQL, Python",2,61,39,70164,5,1
+Omar,Sheikh,omar.sheikh1173@example.com,3933642817,F,bachelor,Sample University,2018,2.61,1.0,Finance,"Excel, Django, React, Communication",4,45,81,104886,3,0
+Usman,Sheikh,usman.sheikh1174@example.com,3316266937,M,master,Sample University,2022,2.92,2.4,Software Engineering,"Data Analysis, Docker, Python, Java",4,45,32,88087,4,0
+Hina,Malik,hina.malik1175@example.com,3792541014,F,master,Sample University,2025,3.38,6.3,Marketing,"Machine Learning, Communication, SQL, Excel, Python",5,52,53,97867,4,0
+Ali,Malik,ali.malik1176@example.com,3697362561,M,diploma,Sample University,2021,3.25,5.2,Marketing,"SQL, Django",2,34,32,48455,2,0
+Omar,Malik,omar.malik1177@example.com,3397021402,F,intermediate,Sample University,2025,3.48,7.7,Sales,"AWS, Communication, Java, Data Analysis",4,59,87,182738,2,1
+Ahmed,Chaudhry,ahmed.chaudhry1178@example.com,3164659215,M,phd,Sample University,2023,2.52,6.5,Human Resources,"Django, JavaScript",2,64,26,106956,5,0
+Mahnoor,Sheikh,mahnoor.sheikh1179@example.com,3493316970,F,phd,Sample University,2020,3.62,9.9,Software Engineering,"Machine Learning, Django, Docker, JavaScript",4,97,95,102299,5,1
+Ali,Khan,ali.khan1180@example.com,3822692402,F,master,Sample University,2024,3.96,9.0,Sales,"Excel, SQL, Django, Machine Learning, Data Analysis",5,54,34,63838,4,1
+Danish,Butt,danish.butt1181@example.com,3159610671,F,bachelor,Sample University,2023,3.95,2.2,Software Engineering,"Docker, React",2,50,30,36435,3,0
+Sana,Chaudhry,sana.chaudhry1182@example.com,3686044266,M,phd,Sample University,2016,2.84,10.5,Marketing,"Machine Learning, Python, Java, Communication, Django",5,60,37,148887,5,1
+Ali,Butt,ali.butt1183@example.com,3847246228,M,intermediate,Sample University,2020,2.22,9.3,Sales,"React, Machine Learning",2,63,93,98217,2,1
+Mahnoor,Malik,mahnoor.malik1184@example.com,3199940753,F,intermediate,Sample University,2025,2.25,8.0,Human Resources,"SQL, JavaScript",2,33,81,109629,2,0
+Danish,Farooq,danish.farooq1185@example.com,3707440192,F,phd,Sample University,2017,2.71,3.9,Marketing,"React, Communication, Excel",3,46,81,160548,5,1
+Usman,Iqbal,usman.iqbal1186@example.com,3233095741,M,bachelor,Sample University,2018,3.55,6.2,Finance,"Java, Data Analysis, Machine Learning, Python, AWS",5,31,82,125262,3,1
+Mahnoor,Raza,mahnoor.raza1187@example.com,3826590500,F,phd,Sample University,2022,3.9,8.5,Human Resources,"JavaScript, Communication, Django, Data Analysis, Machine Learning",5,31,81,199400,5,1
+Zara,Butt,zara.butt1188@example.com,3964788780,F,diploma,Sample University,2019,3.25,10.8,Software Engineering,Data Analysis,1,99,25,157260,2,0
+Ali,Chaudhry,ali.chaudhry1189@example.com,3590177887,F,bachelor,Sample University,2016,2.58,9.0,Data Science,"Django, SQL",2,89,98,101446,3,1
+Iqra,Raza,iqra.raza1190@example.com,3943114445,F,diploma,Sample University,2021,3.16,6.6,Software Engineering,"Excel, Java, React, Docker, Communication",5,53,96,162179,2,1
+Sara,Malik,sara.malik1191@example.com,3457085800,M,intermediate,Sample University,2025,3.78,11.6,Marketing,"SQL, React, Django, Excel",4,59,70,130701,2,1
+Bilal,Sheikh,bilal.sheikh1192@example.com,3267562744,M,master,Sample University,2017,3.8,9.2,Sales,"AWS, JavaScript, Data Analysis, Java, Docker, Communication",6,61,53,53262,4,1
+Sara,Farooq,sara.farooq1193@example.com,3774650091,M,master,Sample University,2024,3.49,3.8,Sales,Java,1,79,56,186073,4,1
+Bilal,Sheikh,bilal.sheikh1194@example.com,3478009716,M,master,Sample University,2020,3.18,5.9,Finance,"Django, Communication, AWS",3,43,85,192203,4,1
+Fatima,Chaudhry,fatima.chaudhry1195@example.com,3880898720,M,intermediate,Sample University,2021,2.44,11.7,Marketing,"Data Analysis, Java, Excel",3,84,61,59026,2,1
+Mahnoor,Iqbal,mahnoor.iqbal1196@example.com,3447517239,F,diploma,Sample University,2016,3.79,9.4,Data Science,"Java, React, Excel, Machine Learning",4,99,25,195530,2,1
+Iqra,Iqbal,iqra.iqbal1197@example.com,3668632216,F,master,Sample University,2019,2.4,3.2,Data Science,Data Analysis,1,87,24,103515,4,0
+Omar,Malik,omar.malik1198@example.com,3986624356,M,master,Sample University,2017,2.57,8.8,Finance,"Machine Learning, React",2,45,64,62863,4,0
+Hamza,Chaudhry,hamza.chaudhry1199@example.com,3878092212,M,diploma,Sample University,2018,3.44,11.2,Sales,"Java, Excel",2,79,22,127844,2,0
+Sana,Sheikh,sana.sheikh1200@example.com,3226585044,M,master,Sample University,2021,2.73,2.9,Marketing,"Docker, JavaScript, Java, React, Python, Django",6,85,76,115118,4,0
+Omar,Malik,omar.malik1201@example.com,3558968566,F,diploma,Sample University,2023,2.73,10.8,Sales,"JavaScript, Machine Learning, Communication, React, Excel, AWS",6,44,98,130242,2,1
+Omar,Butt,omar.butt1202@example.com,3323115062,M,bachelor,Sample University,2025,3.94,1.5,Software Engineering,"Java, Python, React, Docker, AWS",5,79,42,140057,3,0
+Ali,Raza,ali.raza1203@example.com,3243778305,F,bachelor,Sample University,2018,3.43,2.7,Human Resources,"Docker, Machine Learning, React, Python",4,51,85,43286,3,0
+Danish,Butt,danish.butt1204@example.com,3430981675,M,bachelor,Sample University,2025,3.59,5.0,Human Resources,"Django, Excel, Communication",3,44,84,108563,3,0
+Usman,Raza,usman.raza1205@example.com,3467742906,M,phd,Sample University,2020,2.92,8.4,Human Resources,Machine Learning,1,66,92,96838,5,1
+Sana,Iqbal,sana.iqbal1206@example.com,3327222318,M,master,Sample University,2017,2.21,8.7,Human Resources,"JavaScript, React, AWS",3,40,45,179613,4,0
+Mahnoor,Farooq,mahnoor.farooq1207@example.com,3280433570,M,intermediate,Sample University,2025,3.66,1.6,Data Science,"AWS, Communication, Python",3,53,51,128053,2,0
+Ahmed,Khan,ahmed.khan1208@example.com,3280607259,M,master,Sample University,2023,3.72,4.9,Data Science,Data Analysis,1,96,93,36620,4,1
+Bilal,Khan,bilal.khan1209@example.com,3950900151,M,diploma,Sample University,2024,3.14,7.0,Finance,"Python, SQL",2,31,35,57996,2,0
+Fatima,Iqbal,fatima.iqbal1210@example.com,3332972063,F,intermediate,Sample University,2018,3.84,7.8,Finance,"Data Analysis, Docker, Django, AWS, Python",5,97,79,90355,2,1
+Ayesha,Sheikh,ayesha.sheikh1211@example.com,3777635233,M,bachelor,Sample University,2024,3.14,10.8,Marketing,"Machine Learning, SQL, AWS, JavaScript",4,61,71,116519,3,1
+Bilal,Malik,bilal.malik1212@example.com,3888767808,F,diploma,Sample University,2025,3.36,5.2,Software Engineering,"JavaScript, Docker, Python, Data Analysis",4,95,40,196767,2,0
+Hina,Butt,hina.butt1213@example.com,3424247670,F,intermediate,Sample University,2020,3.75,5.6,Human Resources,"Java, React, Docker, AWS, Machine Learning",5,95,25,195105,2,1
+Danish,Malik,danish.malik1214@example.com,3765530440,F,master,Sample University,2025,2.52,11.9,Data Science,"Java, SQL, Data Analysis",3,85,89,199597,4,1
+Bilal,Sheikh,bilal.sheikh1215@example.com,3568603216,M,intermediate,Sample University,2022,3.25,1.3,Finance,"Excel, Docker, Data Analysis",3,53,89,138029,2,0
+Zara,Farooq,zara.farooq1216@example.com,3705654294,F,phd,Sample University,2017,3.69,1.3,Data Science,"Communication, AWS, Java, SQL, React",5,82,54,92814,5,1
+Danish,Sheikh,danish.sheikh1217@example.com,3775349355,F,intermediate,Sample University,2019,3.16,10.6,Human Resources,"Machine Learning, Django, SQL",3,45,88,199702,2,1
+Sana,Butt,sana.butt1218@example.com,3931296202,F,intermediate,Sample University,2019,3.41,10.0,Data Science,"Django, Docker, AWS, Machine Learning",4,69,38,169131,2,1
+Hina,Iqbal,hina.iqbal1219@example.com,3494756971,M,diploma,Sample University,2016,3.71,9.5,Finance,"React, Java, Django, AWS, JavaScript, Machine Learning",6,34,23,85205,2,0
+Danish,Khan,danish.khan1220@example.com,3362700664,M,master,Sample University,2020,3.22,5.4,Data Science,"SQL, AWS, Java, JavaScript",4,74,96,34263,4,1
+Bilal,Iqbal,bilal.iqbal1221@example.com,3892122101,F,diploma,Sample University,2016,2.9,5.9,Software Engineering,"Java, AWS, JavaScript, Data Analysis, Machine Learning, Communication",6,56,62,48510,2,1
+Fatima,Sheikh,fatima.sheikh1222@example.com,3825687602,M,bachelor,Sample University,2020,3.77,5.7,Sales,"Django, JavaScript, Data Analysis, React",4,93,39,183278,3,1
+Ahmed,Butt,ahmed.butt1223@example.com,3557952260,M,intermediate,Sample University,2024,2.76,1.6,Human Resources,"React, SQL, Docker, JavaScript, Machine Learning",5,37,77,57345,2,0
+Ahmed,Butt,ahmed.butt1224@example.com,3315623171,F,phd,Sample University,2025,2.37,1.7,Sales,SQL,1,90,64,126948,5,0
+Sara,Khan,sara.khan1225@example.com,3944374177,F,diploma,Sample University,2025,2.82,5.9,Sales,React,1,34,68,75506,2,0
+Hina,Sheikh,hina.sheikh1226@example.com,3984912134,M,diploma,Sample University,2022,3.42,6.4,Human Resources,"SQL, Docker, Django, Data Analysis, Python",5,41,55,67371,2,1
+Hina,Iqbal,hina.iqbal1227@example.com,3467057477,F,diploma,Sample University,2018,3.36,5.3,Marketing,Java,1,92,94,52558,2,1
+Ahmed,Iqbal,ahmed.iqbal1228@example.com,3791506981,F,intermediate,Sample University,2018,2.39,7.2,Sales,"Django, Java, Machine Learning, SQL, Communication",5,66,25,92603,2,0
+Danish,Iqbal,danish.iqbal1229@example.com,3221759559,F,intermediate,Sample University,2021,2.91,0.8,Software Engineering,"Java, React, Data Analysis, SQL, Communication",5,51,27,167080,2,0
+Danish,Malik,danish.malik1230@example.com,3943041358,F,phd,Sample University,2023,2.94,4.4,Human Resources,Java,1,67,35,138255,5,0
+Sana,Farooq,sana.farooq1231@example.com,3966176747,M,bachelor,Sample University,2021,3.27,11.5,Marketing,Python,1,66,39,131802,3,0
+Hamza,Iqbal,hamza.iqbal1232@example.com,3142257951,M,bachelor,Sample University,2021,3.34,10.7,Human Resources,"AWS, Data Analysis, Excel",3,42,74,100043,3,1
+Hamza,Raza,hamza.raza1233@example.com,3862806535,F,bachelor,Sample University,2023,2.22,9.6,Software Engineering,"React, Excel, Machine Learning",3,64,33,80062,3,1
+Ali,Farooq,ali.farooq1234@example.com,3674071281,M,phd,Sample University,2023,2.82,3.1,Software Engineering,"Docker, AWS, Data Analysis, Java",4,70,46,154841,5,0
+Omar,Malik,omar.malik1235@example.com,3215425028,M,master,Sample University,2024,3.64,5.1,Finance,"Excel, AWS",2,89,25,192283,4,0
+Bilal,Iqbal,bilal.iqbal1236@example.com,3464777210,F,master,Sample University,2018,3.84,7.1,Data Science,"Django, Machine Learning, SQL, Communication, Docker, React",6,99,96,169876,4,1
+Hamza,Chaudhry,hamza.chaudhry1237@example.com,3988399394,M,diploma,Sample University,2016,2.47,0.1,Sales,"SQL, AWS, Django, Data Analysis, Python",5,93,62,65455,2,0
+Sara,Khan,sara.khan1238@example.com,3920530556,M,phd,Sample University,2017,3.81,5.6,Finance,"Java, Machine Learning, Django, Docker",4,74,58,161588,5,1
+Hina,Malik,hina.malik1239@example.com,3359467377,F,diploma,Sample University,2019,2.24,11.7,Software Engineering,"Docker, Django, Java, Excel",4,48,23,197624,2,0
+Omar,Raza,omar.raza1240@example.com,3244986597,F,intermediate,Sample University,2018,3.72,11.5,Software Engineering,"Data Analysis, SQL",2,37,73,42366,2,1
+Danish,Farooq,danish.farooq1241@example.com,3692949034,M,bachelor,Sample University,2018,2.37,7.6,Software Engineering,"Docker, Machine Learning, React, Django",4,94,92,74944,3,1
+Danish,Butt,danish.butt1242@example.com,3865720302,F,master,Sample University,2016,3.03,10.5,Finance,"Communication, Data Analysis, Docker",3,95,25,41429,4,1
+Iqra,Chaudhry,iqra.chaudhry1243@example.com,3784393966,F,phd,Sample University,2022,3.84,7.3,Finance,Python,1,81,22,163550,5,0
+Fatima,Butt,fatima.butt1244@example.com,3207578096,M,intermediate,Sample University,2023,2.74,3.9,Sales,"Java, Docker, AWS, Django, JavaScript, Machine Learning",6,97,67,90211,2,1
+Farhan,Chaudhry,farhan.chaudhry1245@example.com,3209357198,M,diploma,Sample University,2019,3.45,3.5,Finance,"Django, Docker, Machine Learning, AWS, SQL",5,72,25,185533,2,0
+Sana,Malik,sana.malik1246@example.com,3810794293,F,phd,Sample University,2025,3.76,11.2,Human Resources,"React, Python, Django, Communication",4,51,46,123900,5,1
+Sana,Khan,sana.khan1247@example.com,3302032988,M,master,Sample University,2024,3.77,9.2,Human Resources,"Excel, Python, SQL, Data Analysis, AWS",5,53,67,127230,4,1
+Iqra,Malik,iqra.malik1248@example.com,3593958110,M,master,Sample University,2016,3.38,4.4,Software Engineering,"Java, Communication",2,62,99,113458,4,1
+Ahmed,Farooq,ahmed.farooq1249@example.com,3606559837,M,bachelor,Sample University,2018,3.78,3.8,Sales,"AWS, Django",2,56,96,138176,3,1
+Mahnoor,Butt,mahnoor.butt1250@example.com,3159318072,M,bachelor,Sample University,2023,2.71,9.1,Marketing,"AWS, SQL, Django",3,37,50,108281,3,1
+Hina,Raza,hina.raza1251@example.com,3552169550,M,diploma,Sample University,2017,2.27,6.3,Marketing,"Docker, Communication, SQL",3,47,42,73382,2,0
+Sara,Malik,sara.malik1252@example.com,3149727231,M,bachelor,Sample University,2016,2.83,11.7,Finance,"Data Analysis, Machine Learning, React, JavaScript",4,61,23,100669,3,0
+Zara,Farooq,zara.farooq1253@example.com,3252949437,F,phd,Sample University,2019,2.78,10.7,Sales,"Python, JavaScript, SQL, React",4,52,51,112182,5,1
+Hina,Sheikh,hina.sheikh1254@example.com,3270992394,M,intermediate,Sample University,2023,3.39,7.0,Finance,"Java, JavaScript, Docker, Excel, Python, Machine Learning",6,39,52,124833,2,1
+Bilal,Farooq,bilal.farooq1255@example.com,3267717350,M,master,Sample University,2017,2.81,0.4,Sales,"Communication, Excel",2,96,21,191497,4,0
+Ali,Sheikh,ali.sheikh1256@example.com,3480504033,M,phd,Sample University,2017,3.87,2.2,Sales,"SQL, Docker",2,89,25,35259,5,0
+Sana,Malik,sana.malik1257@example.com,3566292067,M,master,Sample University,2020,3.1,8.6,Human Resources,"AWS, Java, JavaScript, Django, Docker",5,91,70,168590,4,1
+Danish,Sheikh,danish.sheikh1258@example.com,3425600621,M,intermediate,Sample University,2020,3.33,10.3,Human Resources,"Docker, Data Analysis, Machine Learning, JavaScript",4,98,41,39822,2,1
+Ali,Iqbal,ali.iqbal1259@example.com,3423298115,M,bachelor,Sample University,2019,3.59,7.0,Human Resources,"AWS, Data Analysis, Django, Python, Java",5,96,70,152331,3,1
+Mahnoor,Khan,mahnoor.khan1260@example.com,3149526028,F,master,Sample University,2021,2.75,6.6,Marketing,"Django, SQL",2,93,34,53063,4,0
+Iqra,Chaudhry,iqra.chaudhry1261@example.com,3444137468,F,intermediate,Sample University,2024,2.59,0.8,Marketing,"Machine Learning, Java, React, SQL",4,85,48,191406,2,0
+Ayesha,Sheikh,ayesha.sheikh1262@example.com,3591372945,M,diploma,Sample University,2019,3.27,1.5,Human Resources,Machine Learning,1,52,88,131006,2,0
+Hina,Raza,hina.raza1263@example.com,3851250003,M,master,Sample University,2023,2.92,6.7,Human Resources,Java,1,62,21,53541,4,0
+Mahnoor,Farooq,mahnoor.farooq1264@example.com,3373346211,M,intermediate,Sample University,2024,3.68,7.5,Marketing,"SQL, Java, Python",3,95,81,40187,2,1
+Bilal,Sheikh,bilal.sheikh1265@example.com,3304988944,M,intermediate,Sample University,2018,3.38,2.6,Finance,"Java, AWS, Django, Data Analysis, Python, React",6,78,34,61389,2,0
+Ayesha,Farooq,ayesha.farooq1266@example.com,3228167228,F,phd,Sample University,2019,2.49,10.7,Finance,"Data Analysis, Docker, Excel, AWS, Machine Learning, SQL",6,44,94,118331,5,1
+Zara,Malik,zara.malik1267@example.com,3427044869,M,bachelor,Sample University,2017,3.41,3.3,Human Resources,React,1,87,29,194035,3,0
+Usman,Farooq,usman.farooq1268@example.com,3698504407,F,master,Sample University,2025,3.5,9.9,Finance,"Python, AWS, Machine Learning, SQL, Data Analysis, Excel",6,40,98,156150,4,1
+Ahmed,Raza,ahmed.raza1269@example.com,3154523042,M,master,Sample University,2019,2.56,0.3,Finance,"Docker, React, AWS, JavaScript",4,53,62,38996,4,0
+Danish,Chaudhry,danish.chaudhry1270@example.com,3704262002,F,intermediate,Sample University,2017,3.55,2.8,Human Resources,"Data Analysis, JavaScript, AWS, React",4,39,75,59481,2,0
+Usman,Sheikh,usman.sheikh1271@example.com,3151560767,M,phd,Sample University,2020,3.58,3.4,Data Science,"Data Analysis, Python, SQL, JavaScript, Java, Docker",6,80,46,157561,5,0
+Iqra,Raza,iqra.raza1272@example.com,3351692380,M,phd,Sample University,2019,3.57,8.1,Data Science,"Python, Machine Learning, Java, AWS",4,91,27,146235,5,1
+Sana,Butt,sana.butt1273@example.com,3335382590,F,bachelor,Sample University,2022,3.34,11.1,Marketing,"AWS, SQL, React",3,32,40,173488,3,0
+Ahmed,Khan,ahmed.khan1274@example.com,3635572457,M,phd,Sample University,2025,2.88,0.8,Software Engineering,"JavaScript, SQL",2,88,93,113129,5,1
+Omar,Chaudhry,omar.chaudhry1275@example.com,3433785299,M,phd,Sample University,2021,2.27,0.5,Human Resources,"SQL, Python",2,75,74,63929,5,0
+Iqra,Khan,iqra.khan1276@example.com,3895227009,F,phd,Sample University,2019,2.51,0.7,Human Resources,"Data Analysis, Excel",2,50,95,125592,5,0
+Hina,Malik,hina.malik1277@example.com,3702897851,M,master,Sample University,2023,2.81,4.0,Human Resources,"Docker, Python, JavaScript, Excel, Django, AWS",6,91,79,198528,4,1
+Ayesha,Raza,ayesha.raza1278@example.com,3498194529,M,master,Sample University,2025,3.15,7.3,Finance,"React, JavaScript, Python, SQL",4,48,42,179115,4,0
+Zara,Raza,zara.raza1279@example.com,3436626347,F,master,Sample University,2025,3.89,8.0,Marketing,"Docker, SQL, Python",3,58,59,108696,4,1
+Fatima,Chaudhry,fatima.chaudhry1280@example.com,3435733952,F,intermediate,Sample University,2024,3.22,2.0,Human Resources,Communication,1,69,83,98972,2,0
+Ayesha,Malik,ayesha.malik1281@example.com,3691852429,F,intermediate,Sample University,2018,2.98,5.1,Sales,AWS,1,50,36,70622,2,0
+Usman,Butt,usman.butt1282@example.com,3698911101,F,bachelor,Sample University,2016,3.4,5.4,Software Engineering,"Communication, Docker, Django, Data Analysis, Machine Learning",5,75,48,135133,3,0
+Sara,Chaudhry,sara.chaudhry1283@example.com,3147874538,M,bachelor,Sample University,2023,3.62,0.4,Finance,"Django, AWS, Communication, Java",4,73,33,175553,3,0
+Mahnoor,Malik,mahnoor.malik1284@example.com,3528332818,F,phd,Sample University,2023,3.34,4.5,Finance,"SQL, Communication, Data Analysis, React, Python, Machine Learning",6,98,46,31917,5,0
+Iqra,Butt,iqra.butt1285@example.com,3996879607,M,master,Sample University,2022,3.07,2.0,Finance,"Machine Learning, JavaScript, AWS, Data Analysis",4,45,66,34224,4,0
+Mahnoor,Butt,mahnoor.butt1286@example.com,3774758384,F,bachelor,Sample University,2019,2.99,1.3,Data Science,"AWS, Machine Learning, Excel, Django",4,100,57,141694,3,0
+Omar,Farooq,omar.farooq1287@example.com,3960139035,F,diploma,Sample University,2020,2.39,12.0,Data Science,"SQL, Docker, Java, AWS, Python",5,39,76,111368,2,1
+Omar,Farooq,omar.farooq1288@example.com,3762974984,M,intermediate,Sample University,2019,2.62,4.2,Sales,"Docker, Excel, React, Python",4,36,80,94715,2,0
+Ahmed,Khan,ahmed.khan1289@example.com,3738054540,F,phd,Sample University,2019,3.99,2.8,Finance,"Excel, Communication, React, Machine Learning, SQL, JavaScript",6,46,55,167016,5,0
+Sara,Sheikh,sara.sheikh1290@example.com,3194178983,F,phd,Sample University,2024,3.31,0.5,Sales,"Communication, Machine Learning, Django, React, Data Analysis, JavaScript",6,82,61,78859,5,0
+Bilal,Farooq,bilal.farooq1291@example.com,3545819755,F,phd,Sample University,2018,3.56,11.5,Data Science,"Excel, SQL, Django, AWS, Python",5,97,38,131876,5,1
+Mahnoor,Farooq,mahnoor.farooq1292@example.com,3878033272,F,phd,Sample University,2021,2.66,9.0,Human Resources,"Machine Learning, Data Analysis, Java, SQL",4,74,33,102787,5,1
+Bilal,Sheikh,bilal.sheikh1293@example.com,3961453306,F,diploma,Sample University,2016,3.79,11.5,Marketing,"JavaScript, Data Analysis, Communication",3,82,52,39077,2,1
+Hamza,Khan,hamza.khan1294@example.com,3778847851,F,diploma,Sample University,2021,2.95,4.7,Data Science,Data Analysis,1,95,74,121317,2,1
+Bilal,Chaudhry,bilal.chaudhry1295@example.com,3349360833,M,phd,Sample University,2024,3.35,2.1,Data Science,"Communication, Python, AWS, Docker",4,51,96,39944,5,0
+Zara,Iqbal,zara.iqbal1296@example.com,3137256086,M,intermediate,Sample University,2019,3.63,6.9,Finance,"Java, AWS, Machine Learning",3,54,21,98678,2,0
+Usman,Malik,usman.malik1297@example.com,3441477253,F,diploma,Sample University,2019,2.22,9.3,Finance,"Django, Excel, Docker, Python, Communication",5,63,26,180780,2,1
+Sara,Raza,sara.raza1298@example.com,3425938896,M,bachelor,Sample University,2016,3.93,7.0,Marketing,"SQL, AWS, JavaScript, Java, Communication, Django",6,85,31,84914,3,1
+Mahnoor,Chaudhry,mahnoor.chaudhry1299@example.com,3386987260,M,phd,Sample University,2023,2.25,5.9,Software Engineering,React,1,58,68,165811,5,0

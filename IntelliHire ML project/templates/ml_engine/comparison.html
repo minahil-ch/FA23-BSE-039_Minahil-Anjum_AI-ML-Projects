@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block page_title %}Model Comparison{% endblock %}
+{% block content %}
+<div class="card ih-card p-3 mb-3">
+  <canvas id="cmpChart" height="90"></canvas>
+</div>
+<div class="card ih-card p-3">
+  <table class="table table-hover">
+    <thead><tr><th>Algorithm</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th><th>ROC-AUC</th><th>CV Mean</th><th>Time (s)</th><th></th></tr></thead>
+    <tbody>
+    {% for t in trainings %}
+      <tr class="{% if t.is_best_model %}table-success{% endif %}">
+        <td>{{ t.algorithm_name }} {% if t.is_best_model %}<i class="fa fa-star text-warning"></i>{% endif %}</td>
+        <td>{{ t.accuracy|floatformat:3 }}</td>
+        <td>{{ t.precision|floatformat:3 }}</td>
+        <td>{{ t.recall|floatformat:3 }}</td>
+        <td>{{ t.f1_score|floatformat:3 }}</td>
+        <td>{{ t.roc_auc|floatformat:3|default:"-" }}</td>
+        <td>{{ t.cross_val_mean|floatformat:3|default:"-" }}</td>
+        <td>{{ t.training_time_seconds|floatformat:2 }}</td>
+        <td>{% if t.confusion_matrix %}<span class="small text-muted">{{ t.confusion_matrix }}</span>{% endif %}</td>
+      </tr>
+    {% empty %}<tr><td colspan="9" class="text-center text-muted py-3">No trained models yet.</td></tr>{% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script>
+const labels = [{% for t in trainings %}"{{ t.algorithm_name }}",{% endfor %}];
+const acc = [{% for t in trainings %}{{ t.accuracy|floatformat:3 }},{% endfor %}];
+new Chart(document.getElementById('cmpChart'), {
+  type: 'bar',
+  data: { labels: labels, datasets: [{ label: 'Accuracy', data: acc, backgroundColor: '#4f46e5' }] },
+  options: { plugins: { legend: { display: false } } }
+});
+</script>
+{% endblock %}

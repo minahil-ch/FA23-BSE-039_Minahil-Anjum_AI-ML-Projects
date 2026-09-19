@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block page_title %}Model Training{% endblock %}
+{% block content %}
+<div class="card ih-card p-3 mb-3">
+  <h6>Select a dataset to train on</h6>
+  <p class="small text-muted">The system will train 6 algorithms (Logistic Regression, Decision Tree, Random Forest, SVM, KNN, Naive Bayes), evaluate them, and automatically save the best one.</p>
+  <table class="table table-hover align-middle">
+    <thead><tr><th>Dataset</th><th>Rows</th><th>Status</th><th></th></tr></thead>
+    <tbody>
+    {% for d in datasets %}
+      <tr>
+        <td>{{ d.name }}</td>
+        <td>{{ d.rows_count }}</td>
+        <td><span class="badge bg-info text-dark">{{ d.get_status_display }}</span></td>
+        <td><a href="{% url 'ml_engine:train' d.pk %}" class="btn btn-sm btn-primary">Train Models</a></td>
+      </tr>
+    {% empty %}<tr><td colspan="4" class="text-center text-muted py-3">No datasets available. <a href="{% url 'datasets:upload' %}">Upload one</a>.</td></tr>{% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="card ih-card p-3">
+  <h6>Recent Training Runs</h6>
+  <table class="table table-sm">
+    <thead><tr><th>Algorithm</th><th>Dataset</th><th>Accuracy</th><th>F1 Score</th><th>Best?</th><th>Trained At</th></tr></thead>
+    <tbody>
+    {% for t in trainings %}
+      <tr>
+        <td>{{ t.algorithm_name }}</td>
+        <td>{{ t.dataset.name }}</td>
+        <td>{{ t.accuracy|floatformat:2 }}</td>
+        <td>{{ t.f1_score|floatformat:2 }}</td>
+        <td>{% if t.is_best_model %}<span class="badge bg-success">Best</span>{% endif %}</td>
+        <td>{{ t.trained_at|date:"M d, H:i" }}</td>
+      </tr>
+    {% empty %}<tr><td colspan="6" class="text-center text-muted py-3">No models trained yet.</td></tr>{% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'ml_engine:comparison' %}" class="btn btn-outline-primary btn-sm">View Full Comparison</a>
+</div>
+{% endblock %}
