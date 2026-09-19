@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Visualize - {{ dataset.name }}{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0">Visualizations — {{ dataset.name }}</h1>
+        <div class="btn-group">
+            <a href="?cleaned=0" class="btn btn-{% if not use_cleaned %}primary{% else %}outline-primary{% endif %}">Original</a>
+            {% if dataset.cleaned_file %}
+            <a href="?cleaned=1" class="btn btn-{% if use_cleaned %}primary{% else %}outline-primary{% endif %}">Cleaned</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white">Missing Values</div>
+                <div class="card-body"><canvas id="missingChart" height="250"></canvas></div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white">Correlation Heatmap</div>
+                <div class="card-body"><canvas id="heatmapChart" height="250"></canvas></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mt-2" id="histogramContainer"></div>
+    <div class="row g-4 mt-2" id="barChartContainer"></div>
+    <div class="row g-4 mt-2" id="pieChartContainer"></div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/charts.js' %}"></script>
+<script>
+const chartData = {{ charts_json|safe }};
+document.addEventListener('DOMContentLoaded', () => initCharts(chartData));
+</script>
+{% endblock %}

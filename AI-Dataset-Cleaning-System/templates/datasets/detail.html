@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% block title %}{{ dataset.name }} — AI Dataset Cleaning{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-3 fade-in">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'datasets:list' %}">Datasets</a></li>
+            <li class="breadcrumb-item active">{{ dataset.name }}</li>
+        </ol>
+    </nav>
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-start mb-4 flex-wrap gap-3 fade-in">
+        <div>
+            <h1 class="page-title" style="font-size:1.5rem;">{{ dataset.name }}</h1>
+            <div class="d-flex gap-2 mt-1 flex-wrap">
+                <span class="badge bg-{% if dataset.status == 'cleaned' %}success{% elif dataset.status == 'analyzed' %}info{% else %}secondary{% endif %}">
+                    {{ dataset.status }}
+                </span>
+                <span class="badge bg-secondary">{{ dataset.file_type|upper }}</span>
+            </div>
+        </div>
+        <div class="btn-group flex-wrap gap-2" role="group">
+            <a href="{% url 'datasets:analyze' dataset.pk %}" class="btn btn-outline-primary">
+                <i class="bi bi-search"></i>Analyze
+            </a>
+            <a href="{% url 'datasets:visualize' dataset.pk %}" class="btn btn-outline-info">
+                <i class="bi bi-bar-chart"></i>Visualize
+            </a>
+            <a href="{% url 'datasets:clean' dataset.pk %}" class="btn btn-primary">
+                <i class="bi bi-brush"></i>Clean
+            </a>
+            <a href="{% url 'datasets:report' dataset.pk %}" class="btn btn-outline-success">
+                <i class="bi bi-file-earmark-text"></i>Report
+            </a>
+        </div>
+    </div>
+
+    {% if analysis %}
+    <!-- Quick stats -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-md-3 fade-in fade-in-1">
+            <div class="card stat-card card-violet text-center">
+                <div class="card-body py-3">
+                    <div class="h3 mb-0 fw-bold" style="color:var(--accent-1);">{{ analysis.row_count }}</div>
+                    <small class="text-muted">Rows</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 fade-in fade-in-2">
+            <div class="card stat-card card-sky text-center">
+                <div class="card-body py-3">
+                    <div class="h3 mb-0 fw-bold" style="color:var(--accent-3);">{{ analysis.column_count }}</div>
+                    <small class="text-muted">Columns</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 fade-in fade-in-3">
+            <div class="card text-center" style="background:linear-gradient(135deg,#fee2e2,#fecaca);border-color:#fca5a5!important;">
+                <div class="card-body py-3">
+                    <div class="h3 mb-0 fw-bold text-danger">{{ analysis.missing_values.total }}</div>
+                    <small class="text-muted">Missing Values</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 fade-in fade-in-4">
+            <div class="card stat-card card-pink text-center">
+                <div class="card-body py-3">
+                    <div class="h3 mb-0 fw-bold" style="color:var(--accent-warn);">{{ analysis.duplicate_rows }}</div>
+                    <small class="text-muted">Duplicates</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Details row -->
+    <div class="row g-4 fade-in fade-in-2">
+        <div class="col-lg-6">
+            <div class="card border-0 h-100">
+                <div class="card-header">
+                    <i class="bi bi-table me-2" style="color:var(--accent-1);"></i>Data Types
+                </div>
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush">
+                        {% for col, dtype in analysis.data_types.items %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-4 py-2">
+                            <span>{{ col }}</span>
+                            <code>{{ dtype }}</code>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card border-0 h-100">
+                <div class="card-header">
+                    <i class="bi bi-robot me-2" style="color:var(--accent-2);"></i>AI Suggestions
+                </div>
+                <div class="card-body">
+                    {% if suggestions %}
+                    {% for s in suggestions|slice:":8" %}
+                    <div class="alert alert-{% if s.priority == 'high' %}danger{% elif s.priority == 'medium' %}warning{% else %}info{% endif %} py-2 mb-2">
+                        <small><strong>{{ s.type|title }}</strong>: {{ s.message }}</small>
+                    </div>
+                    {% endfor %}
+                    <a href="{% url 'datasets:clean' dataset.pk %}" class="btn btn-sm btn-primary mt-1">
+                        <i class="bi bi-brush"></i>Apply Cleaning
+                    </a>
+                    {% else %}
+                    <div class="text-center py-3">
+                        <i class="bi bi-check-circle-fill" style="font-size:2rem;color:var(--accent-4);"></i>
+                        <p class="text-muted mb-0 mt-2" style="font-size:0.875rem;">Dataset looks clean!</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if analysis.sample_rows %}
+    <div class="card border-0 mt-4 fade-in fade-in-3">
+        <div class="card-header">
+            <i class="bi bi-grid-3x3-gap me-2" style="color:var(--accent-3);"></i>Sample Data (First 5 Rows)
+        </div>
+        <div class="table-responsive">
+            <table class="table table-sm table-striped mb-0">
+                <thead><tr>{% for col in analysis.columns %}<th>{{ col }}</th>{% endfor %}</tr></thead>
+                <tbody>
+                    {% for row in analysis.sample_rows %}
+                    <tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+
+    {% else %}
+    <div class="alert alert-info fade-in">
+        <i class="bi bi-info-circle-fill me-2"></i>
+        Analysis not yet run.
+        <a href="{% url 'datasets:analyze' dataset.pk %}" class="alert-link">Run analysis now</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

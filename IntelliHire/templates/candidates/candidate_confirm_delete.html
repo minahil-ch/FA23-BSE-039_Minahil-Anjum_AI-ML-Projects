@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block page_title %}Delete Candidate{% endblock %}
+{% block content %}
+<div class="card ih-card p-4" style="max-width:500px;">
+  <p>Are you sure you want to delete <strong>{{ object.full_name }}</strong>? This action cannot be undone.</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="{% url 'candidates:list' %}" class="btn btn-light">Cancel</a>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+name,email,age,salary,department,phone
+John Doe,john@example.com,28,55000,Engineering,+1-555-0101
+Jane Smith,jane@example.com,,62000,Marketing,+1-555-0102
+Bob Wilson,bob.wilson@example.com,35,71000,Engineering,+1-555-0103
+Alice Brown,invalid-email,42,58000,Sales,+1-555-0104
+John Doe,john@example.com,28,55000,Engineering,+1-555-0101
+Charlie Davis,charlie@example.com,31,,HR,+1-555-0105
+Diana Miller,diana@example.com,29,64000,Marketing,invalid-phone
+  Eve Taylor  ,eve@example.com,27,59000,Sales,+1-555-0107
+Frank Lee,frank@example.com,38,82000,Engineering,+1-555-0108

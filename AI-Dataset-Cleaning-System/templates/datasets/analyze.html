@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block title %}Analysis — {{ dataset.name }}{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <nav aria-label="breadcrumb" class="mb-3 fade-in">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'datasets:list' %}">Datasets</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'datasets:detail' dataset.pk %}">{{ dataset.name }}</a></li>
+            <li class="breadcrumb-item active">Analysis</li>
+        </ol>
+    </nav>
+
+    <div class="page-header fade-in">
+        <h1 class="page-title"><span class="gradient-text">Dataset Analysis</span></h1>
+        <p class="page-subtitle">{{ dataset.name }} &mdash; detailed quality report</p>
+    </div>
+
+    <!-- Stat strip -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-md-3 fade-in fade-in-1">
+            <div class="card stat-card card-violet text-center">
+                <div class="card-body py-3">
+                    <div class="h2 fw-bold mb-0" style="color:var(--accent-1);">{{ analysis.row_count }}</div>
+                    <small class="text-muted">Rows</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 fade-in fade-in-2">
+            <div class="card stat-card card-sky text-center">
+                <div class="card-body py-3">
+                    <div class="h2 fw-bold mb-0" style="color:var(--accent-3);">{{ analysis.column_count }}</div>
+                    <small class="text-muted">Columns</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 fade-in fade-in-3">
+            <div class="card text-center" style="background:linear-gradient(135deg,#fee2e2,#fecaca);border-color:#fca5a5!important;">
+                <div class="card-body py-3">
+                    <div class="h2 fw-bold mb-0 text-danger">{{ analysis.missing_values.total }}</div>
+                    <small class="text-muted">Missing ({{ analysis.missing_values.percentage }}%)</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3 fade-in fade-in-4">
+            <div class="card stat-card card-pink text-center">
+                <div class="card-body py-3">
+                    <div class="h2 fw-bold mb-0" style="color:var(--accent-warn);">{{ analysis.duplicate_rows }}</div>
+                    <small class="text-muted">Duplicates</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 fade-in fade-in-2">
+        <!-- Column summary -->
+        <div class="col-md-4">
+            <div class="card border-0 h-100">
+                <div class="card-header">
+                    <i class="bi bi-bar-chart-steps me-2" style="color:var(--accent-1);"></i>Column Summary
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-3 p-3 rounded" style="background:var(--gradient-card-1);">
+                        <span style="font-weight:600;color:var(--text-secondary);">Numeric</span>
+                        <span class="badge bg-primary">{{ analysis.numeric_columns|length }} cols</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-3 p-3 rounded" style="background:var(--gradient-card-3);">
+                        <span style="font-weight:600;color:var(--text-secondary);">Categorical</span>
+                        <span class="badge bg-info">{{ analysis.categorical_columns|length }} cols</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center p-3 rounded" style="background:var(--gradient-card-2);">
+                        <span style="font-weight:600;color:var(--text-secondary);">Memory Usage</span>
+                        <span class="badge bg-success">{{ analysis.memory_usage_mb }} MB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Missing values by column -->
+        <div class="col-md-8">
+            <div class="card border-0 h-100">
+                <div class="card-header">
+                    <i class="bi bi-exclamation-triangle me-2" style="color:var(--accent-warn);"></i>Missing Values by Column
+                </div>
+                <div class="card-body p-0">
+                    {% if analysis.missing_values.by_column %}
+                    <ul class="list-group list-group-flush">
+                        {% for col, count in analysis.missing_values.by_column.items %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-4 py-2">
+                            <span>{{ col }}</span>
+                            <span class="badge bg-danger">{{ count }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <div class="text-center py-4">
+                        <i class="bi bi-check-circle-fill" style="font-size:2.5rem;color:var(--accent-4);"></i>
+                        <p class="text-muted mt-2 mb-0">No missing values found.</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if suggestions %}
+    <div class="card border-0 mt-4 fade-in fade-in-3">
+        <div class="card-header">
+            <i class="bi bi-lightbulb me-2" style="color:var(--accent-warn);"></i>AI Cleaning Suggestions
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead><tr><th>Issue</th><th>Column</th><th>Count</th><th>Priority</th><th>Strategy</th></tr></thead>
+                    <tbody>
+                        {% for s in suggestions %}
+                        <tr>
+                            <td>{{ s.type|title }}</td>
+                            <td>{{ s.column|default:"All" }}</td>
+                            <td>{{ s.count }}</td>
+                            <td><span class="badge bg-{% if s.priority == 'high' %}danger{% elif s.priority == 'medium' %}warning{% else %}info{% endif %}">{{ s.priority }}</span></td>
+                            <td>{{ s.strategy }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="p-3">
+                <a href="{% url 'datasets:clean' dataset.pk %}" class="btn btn-primary">
+                    <i class="bi bi-brush"></i>Proceed to Cleaning
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

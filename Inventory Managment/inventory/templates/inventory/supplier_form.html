@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}{% if object %}Edit{% else %}Add{% endif %} Supplier — Inventory MS{% endblock %}
+
+{% block content %}
+<a href="{% url 'supplier-list' %}" class="btn btn-sm btn-outline-secondary mb-4">
+  <i class="bi bi-arrow-left me-1"></i> Back to Suppliers
+</a>
+
+<div class="page-header">
+  <h1>
+    <i class="bi bi-{% if object %}pencil-square{% else %}plus-circle{% endif %} me-2" style="color:var(--accent);"></i>
+    {% if object %}Edit{% else %}Add{% endif %} Supplier
+  </h1>
+</div>
+
+<div class="form-card">
+  <form method="post">
+    {% csrf_token %}
+    {% include "inventory/_form_fields.html" %}
+    <div class="d-flex gap-2 mt-2">
+      <button type="submit" class="btn btn-primary">
+        <i class="bi bi-check-lg me-1"></i>{% if object %}Save Changes{% else %}Create Supplier{% endif %}
+      </button>
+      <a href="{% url 'supplier-list' %}" class="btn btn-outline-secondary">
+        <i class="bi bi-x-lg me-1"></i>Cancel
+      </a>
+    </div>
+  </form>
+</div>
+{% endblock %}

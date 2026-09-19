@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block page_title %}Predict Candidate{% endblock %}
+{% block content %}
+<div class="row g-3">
+  <div class="col-lg-6">
+    <div class="card ih-card p-4">
+      <h6 class="mb-3">Enter Candidate Information</h6>
+      <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+          <div class="mb-3">
+            <label class="form-label small">{{ field.label }}</label>
+            {{ field }}
+            {% for error in field.errors %}<div class="text-danger small">{{ error }}</div>{% endfor %}
+          </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary w-100"><i class="fa fa-wand-magic-sparkles"></i> Predict</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    {% if result %}
+    <div class="card ih-card p-4 text-center">
+      <h6 class="text-muted">Prediction Result</h6>
+      <h1 class="{% if result.result == 'SELECTED' %}text-success{% else %}text-danger{% endif %}">{{ result.result }}</h1>
+      <div class="progress my-3" style="height: 24px;">
+        <div class="progress-bar {% if result.result == 'SELECTED' %}bg-success{% else %}bg-danger{% endif %}" style="width: {{ result.probability|floatformat:0 }}%;">
+          {{ result.probability|floatformat:0 }}% Selected Probability
+        </div>
+      </div>
+      <p class="small text-muted">Model used: {{ result.algorithm_name }}</p>
+      <p class="text-start">{{ result.explanation }}</p>
+    </div>
+    {% else %}
+    <div class="card ih-card p-4 text-center text-muted">
+      <i class="fa-solid fa-wand-magic-sparkles fa-2x mb-2"></i>
+      <p>Fill the form and click Predict to see the AI-powered result here.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

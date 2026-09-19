@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Categories — Inventory MS{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div>
+    <h1><i class="bi bi-tags me-2" style="color:var(--accent);"></i>Categories</h1>
+    <div class="subtitle">{{ categories|length }} categor{{ categories|length|pluralize:"y,ies" }}</div>
+  </div>
+  {% if user.is_authenticated %}
+    <a href="{% url 'category-add' %}" class="btn btn-primary">
+      <i class="bi bi-plus-lg"></i> Add Category
+    </a>
+  {% endif %}
+</div>
+
+<div class="panel">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Products</th>
+        {% if user.is_authenticated %}<th></th>{% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for category in categories %}
+        <tr>
+          <td style="font-weight:600;">{{ category.name }}</td>
+          <td style="color:var(--text-muted);">{{ category.description|truncatewords:12|default:"—" }}</td>
+          <td>
+            <span class="bg-info badge">{{ category.product_count }}</span>
+          </td>
+          {% if user.is_authenticated %}
+          <td>
+            <div class="d-flex gap-1">
+              <a href="{% url 'category-edit' category.pk %}" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-pencil"></i>
+              </a>
+              <a href="{% url 'category-delete' category.pk %}" class="btn btn-sm btn-outline-danger">
+                <i class="bi bi-trash"></i>
+              </a>
+            </div>
+          </td>
+          {% endif %}
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="4">
+            <div class="empty-state">
+              <div class="empty-icon">🏷️</div>
+              <p>No categories yet.</p>
+              {% if user.is_authenticated %}
+                <a href="{% url 'category-add' %}" class="btn btn-primary mt-2">Add your first category</a>
+              {% endif %}
+            </div>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

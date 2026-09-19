@@ -1,0 +1,37 @@
+"""
+Create a sample TXT document for testing RAG and upload pipeline.
+Run: python create_test_doc.py
+Then upload sample_knowledge.txt via the Documents page.
+"""
+
+SAMPLE_TEXT = """
+AI Operations Dashboard - Knowledge Base
+
+RAG Pipeline Overview
+The Retrieval-Augmented Generation (RAG) pipeline processes uploaded documents
+in four steps: text extraction, chunking, embedding generation, and vector storage.
+
+Document Processing
+Supported file formats are PDF, DOCX, and TXT. When a document is uploaded,
+a Celery background task extracts text, splits it into 500-character chunks
+with 80-character overlap, and generates TF-IDF embeddings stored in the database.
+
+Ticket Classification
+The AI ticket classifier predicts category (Hardware, Software, Network, Access, AI/ML),
+priority (Low, Medium, High), and suggested department using keyword analysis.
+Classification runs automatically when a new support ticket is created.
+
+AI Agent
+The AI agent receives natural language requests and selects the appropriate tool:
+document search, ticket classification, summarization, report generation,
+ticket assignment, or email sending. Sensitive actions require human approval.
+
+Weekly Reports
+The report generator aggregates tasks, tickets, documents, and AI interaction
+logs for the past seven days and produces a Markdown operational summary.
+"""
+
+if __name__ == '__main__':
+    with open('sample_knowledge.txt', 'w', encoding='utf-8') as f:
+        f.write(SAMPLE_TEXT.strip())
+    print('Created sample_knowledge.txt — upload this file in /documents to test RAG chat.')

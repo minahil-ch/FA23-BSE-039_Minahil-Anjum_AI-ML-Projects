@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — Inventory MS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="{% static 'inventory/css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+<div class="login-page">
+  <div class="login-card">
+    <!-- Logo -->
+    <div class="login-logo">
+      <div class="logo-icon">📦</div>
+      <div>
+        <h4 class="mb-0">Inventory MS</h4>
+        <div class="lead">Sign in to your workspace</div>
+      </div>
+    </div>
+
+    {% if form.errors %}
+      <div class="alert alert-danger mb-4" role="alert">
+        <i class="bi bi-x-circle-fill me-2"></i>
+        Invalid username or password. Please try again.
+      </div>
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+      <div class="mb-4">
+        <label class="form-label" for="id_username">Username</label>
+        <div style="position:relative;">
+          <i class="bi bi-person" style="position:absolute;left:0.75rem;top:50%;transform:translateY(-50%);color:var(--text-muted);"></i>
+          <input
+            type="text"
+            name="username"
+            id="id_username"
+            class="form-control"
+            style="padding-left:2.25rem;"
+            placeholder="Enter your username"
+            required
+            autofocus
+          >
+        </div>
+      </div>
+
+      <div class="mb-5">
+        <label class="form-label" for="id_password">Password</label>
+        <div style="position:relative;">
+          <i class="bi bi-lock" style="position:absolute;left:0.75rem;top:50%;transform:translateY(-50%);color:var(--text-muted);"></i>
+          <input
+            type="password"
+            name="password"
+            id="id_password"
+            class="form-control"
+            style="padding-left:2.25rem;"
+            placeholder="Enter your password"
+            required
+          >
+        </div>
+      </div>
+
+      <input type="hidden" name="next" value="{{ next }}">
+      <button type="submit" class="btn btn-primary w-100" style="padding:.6rem;font-size:.9rem;">
+        <i class="bi bi-box-arrow-in-right me-2"></i>Sign In
+      </button>
+    </form>
+
+    <p class="text-center mt-4" style="font-size:.75rem;color:var(--text-subtle);">
+      Use your Django admin credentials &mdash;
+      <a href="/admin/" style="color:var(--text-muted);">or create one via admin</a>
+    </p>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

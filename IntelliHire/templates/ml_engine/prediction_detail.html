@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block page_title %}Prediction Detail{% endblock %}
+{% block content %}
+<div class="card ih-card p-4" style="max-width:600px;">
+  <h5>{{ prediction.input_data.first_name }} {{ prediction.input_data.last_name }}</h5>
+  <h2 class="{% if prediction.result == 'SELECTED' %}text-success{% else %}text-danger{% endif %}">{{ prediction.result }}</h2>
+  <p>Probability: {{ prediction.probability|floatformat:0 }}%</p>
+  <p>{{ prediction.explanation }}</p>
+  <hr>
+  <h6>Input Data</h6>
+  <table class="table table-sm">
+    {% for key, value in prediction.input_data.items %}
+    <tr><th>{{ key }}</th><td>{{ value }}</td></tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

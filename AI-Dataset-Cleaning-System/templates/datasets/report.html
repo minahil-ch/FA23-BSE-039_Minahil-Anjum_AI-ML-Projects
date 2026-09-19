@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %}Report - {{ dataset.name }}{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <h1 class="h3 mb-0">Cleaning Report — {{ dataset.name }}</h1>
+        <div class="btn-group">
+            {% if dataset.cleaned_file %}
+            <a href="{% url 'datasets:download' dataset.pk 'csv' %}?variant=cleaned" class="btn btn-outline-primary"><i class="bi bi-download me-1"></i>CSV</a>
+            <a href="{% url 'datasets:download' dataset.pk 'xlsx' %}?variant=cleaned" class="btn btn-outline-primary"><i class="bi bi-download me-1"></i>Excel</a>
+            {% endif %}
+            {% if report and report.pdf_file %}
+            <a href="{% url 'datasets:download_report_pdf' dataset.pk %}" class="btn btn-success"><i class="bi bi-file-pdf me-1"></i>Download PDF</a>
+            {% endif %}
+            <form method="post" action="{% url 'datasets:generate_report' dataset.pk %}" class="d-inline">
+                {% csrf_token %}
+                <button class="btn btn-primary"><i class="bi bi-arrow-clockwise me-1"></i>Generate Report</button>
+            </form>
+        </div>
+    </div>
+
+    {% if job %}
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-white d-flex justify-content-between">
+            <h5 class="mb-0">Job Summary</h5>
+            <span class="badge bg-success">{{ job.status }}</span>
+        </div>
+        <div class="card-body">
+            <div class="progress mb-3" style="height: 10px;">
+                <div class="progress-bar bg-success" style="width: {{ job.progress }}%"></div>
+            </div>
+            <p class="text-muted small mb-0">Completed: {{ job.completed_at|date:"M d, Y H:i" }}</p>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if report %}
+    <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-white"><h5 class="mb-0">Cleaning Summary</h5></div>
+                <div class="card-body">
+                    <p><strong>Operations Applied:</strong> {{ report.summary.operations_count }}</p>
+                    {% if report.summary.operations %}
+                    <ul class="list-group list-group-flush">
+                        {% for op in report.summary.operations %}
+                        <li class="list-group-item px-0">
+                            <strong>{{ op.operation }}</strong> — {{ op.description }}
+                            <span class="badge bg-secondary float-end">{{ op.rows_affected }} rows</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-white"><h5 class="mb-0">Before vs After</h5></div>
+                <div class="card-body p-0">
+                    <table class="table mb-0">
+                        <thead><tr><th>Metric</th><th>Before</th><th>After</th><th>Change</th></tr></thead>
+                        <tbody>
+                            {% for metric, data in report.comparison.items %}
+                            <tr>
+                                <td>{{ metric|title }}</td>
+                                <td>{{ data.before }}</td>
+                                <td>{{ data.after }}</td>
+                                <td class="{% if data.improved %}text-success{% else %}text-muted{% endif %}">
+                                    {% if data.change %}{{ data.change }}{% else %}—{% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% elif not job %}
+    <div class="alert alert-info">
+        <i class="bi bi-info-circle me-2"></i>No cleaning job found. <a href="{% url 'datasets:clean' dataset.pk %}">Run cleaning first</a>.
+    </div>
+    {% else %}
+    <div class="alert alert-warning">
+        <i class="bi bi-exclamation-triangle me-2"></i>Report not generated yet. Click "Generate Report" above.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

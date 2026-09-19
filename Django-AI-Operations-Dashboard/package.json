@@ -1,0 +1,15 @@
+{
+  "name": "django-ai-operations-dashboard",
+  "version": "1.0.0",
+  "description": "Root orchestrator for the Django AI Operations Dashboard",
+  "scripts": {
+    "frontend-install": "npm install --prefix frontend",
+    "frontend-dev": "npm run dev --prefix frontend",
+    "frontend-build": "npm run build --prefix frontend",
+    "backend-run": "python backend/manage.py runserver",
+    "dev": "npm run dev --prefix frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

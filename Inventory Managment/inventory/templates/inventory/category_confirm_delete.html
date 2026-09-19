@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Delete Category — Inventory MS{% endblock %}
+
+{% block content %}
+<a href="{% url 'category-list' %}" class="btn btn-sm btn-outline-secondary mb-4">
+  <i class="bi bi-arrow-left me-1"></i> Back to Categories
+</a>
+
+<div class="delete-card">
+  <div style="font-size:2.5rem;margin-bottom:1rem;">⚠️</div>
+  <h2 style="font-size:1.3rem;margin-bottom:.5rem;">Delete Category?</h2>
+  <p style="color:var(--text-muted);font-size:.875rem;margin-bottom:1.5rem;">
+    You are about to permanently delete the category
+    <strong style="color:var(--text-primary);">{{ object.name }}</strong>.
+    This action <strong style="color:var(--danger);">cannot be undone</strong>.
+    Products assigned to this category cannot be deleted here — reassign them first.
+  </p>
+  <form method="post">
+    {% csrf_token %}
+    <div class="d-flex gap-2">
+      <button type="submit" class="btn btn-danger"><i class="bi bi-trash me-1"></i>Yes, Delete</button>
+      <a href="{% url 'category-list' %}" class="btn btn-outline-secondary"><i class="bi bi-x-lg me-1"></i>Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

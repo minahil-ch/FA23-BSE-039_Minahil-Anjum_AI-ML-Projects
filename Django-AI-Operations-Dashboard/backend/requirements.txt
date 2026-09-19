@@ -1,0 +1,21 @@
+django>=4.2,<5.2
+djangorestframework>=3.14.0
+djangorestframework-simplejwt>=5.3.0
+django-cors-headers>=4.3.0
+python-dotenv>=1.0.1
+psycopg2-binary>=2.9.9
+celery>=5.3.6
+redis>=5.0.1
+django-filter>=23.5
+drf-spectacular>=0.27.1
+# Document processing
+pypdf>=4.0.0
+python-docx>=1.1.0
+# AI / embeddings (offline TF-IDF — no GPU required)
+numpy>=1.26.0
+# Optional OpenAI integration (works without API key via local fallback)
+openai>=1.30.0
+# Image uploads (avatars)
+Pillow>=10.0.0
+# Windows Celery worker pool
+eventlet>=0.35.0

@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% block title %}Dashboard — Inventory MS{% endblock %}
+
+{% block content %}
+<!-- ── Page Header ── -->
+<div class="page-header">
+  <div>
+    <h1><i class="bi bi-grid-1x2-fill me-2" style="color:var(--accent);"></i>Dashboard</h1>
+    <div class="subtitle">Welcome back{% if user.is_authenticated %}, {{ user.username }}{% endif %} — here is your warehouse at a glance</div>
+  </div>
+  {% if user.is_authenticated %}
+  <a href="{% url 'transaction-add' %}" class="btn btn-primary">
+    <i class="bi bi-plus-lg"></i> Record Stock Movement
+  </a>
+  {% endif %}
+</div>
+
+<!-- ── Stat Cards Grid ── -->
+<div class="stat-grid">
+  <div class="stat-card">
+    <div class="stat-icon-wrapper">
+      <i class="bi bi-box-seam-fill"></i>
+    </div>
+    <div class="stat-label">Total Products</div>
+    <div class="stat-value">{{ total_products }}</div>
+  </div>
+  <div class="stat-card info">
+    <div class="stat-icon-wrapper">
+      <i class="bi bi-tags-fill"></i>
+    </div>
+    <div class="stat-label">Categories</div>
+    <div class="stat-value">{{ total_categories }}</div>
+  </div>
+  <div class="stat-card warning">
+    <div class="stat-icon-wrapper">
+      <i class="bi bi-truck-flatbed"></i>
+    </div>
+    <div class="stat-label">Suppliers</div>
+    <div class="stat-value">{{ total_suppliers }}</div>
+  </div>
+  <div class="stat-card success">
+    <div class="stat-icon-wrapper">
+      <i class="bi bi-currency-dollar"></i>
+    </div>
+    <div class="stat-label">Total Stock Value</div>
+    <div class="stat-value" style="font-size:1.6rem;">${{ total_stock_value|floatformat:2|intcomma }}</div>
+  </div>
+</div>
+
+<!-- ── Two Panel Columns ── -->
+<div class="row g-4">
+
+  <!-- Low Stock Alerts Panel -->
+  <div class="col-lg-6">
+    <div class="panel">
+      <div class="panel-header">
+        <h5><i class="bi bi-exclamation-triangle-fill" style="color:var(--warning);"></i> Low Stock Alerts</h5>
+        <a href="{% url 'product-list' %}" class="btn btn-sm btn-outline-secondary">View All</a>
+      </div>
+      {% if low_stock_products %}
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Qty</th>
+              <th>Reorder At</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in low_stock_products %}
+              <tr class="row-low-stock">
+                <td>
+                  <a href="{% url 'product-detail' product.pk %}">{{ product.name }}</a>
+                  <div style="font-size:.72rem;color:var(--text-muted);">{{ product.sku }}</div>
+                </td>
+                <td><strong style="color:var(--warning-text);">{{ product.quantity }}</strong></td>
+                <td>{{ product.reorder_level }}</td>
+                <td><span class="bg-warning badge"><i class="bi bi-exclamation-circle-fill"></i> Low</span></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <div class="empty-state">
+          <div class="empty-icon">🎉</div>
+          <p>All products are well stocked!</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Recent Transactions Panel -->
+  <div class="col-lg-6">
+    <div class="panel">
+      <div class="panel-header">
+        <h5><i class="bi bi-arrow-left-right" style="color:var(--info);"></i> Recent Transactions</h5>
+        <a href="{% url 'transaction-list' %}" class="btn btn-sm btn-outline-secondary">View All</a>
+      </div>
+      {% if recent_transactions %}
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Type</th>
+              <th>Qty</th>
+              <th>When</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for tx in recent_transactions %}
+              <tr>
+                <td>{{ tx.product.name }}</td>
+                <td>
+                  {% if tx.transaction_type == "IN" %}
+                    <span class="bg-success badge"><i class="bi bi-arrow-down-circle-fill"></i> IN</span>
+                  {% else %}
+                    <span class="bg-danger badge"><i class="bi bi-arrow-up-circle-fill"></i> OUT</span>
+                  {% endif %}
+                </td>
+                <td><strong>{{ tx.quantity }}</strong></td>
+                <td style="color:var(--text-muted);font-size:.8rem;">{{ tx.timestamp|naturaltime }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <div class="empty-state">
+          <div class="empty-icon">📋</div>
+          <p>No transactions recorded yet.</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+
+<!-- ── Quick Links ── -->
+<div class="row g-3 mt-2">
+  <div class="col-12">
+    <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:1rem 1.25rem;display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;box-shadow:var(--shadow-sm);">
+      <span style="font-size:.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;">Quick Actions:</span>
+      {% if user.is_authenticated %}
+        <a href="{% url 'product-add' %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-box-seam"></i> Add Product</a>
+        <a href="{% url 'category-add' %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-tag"></i> Add Category</a>
+        <a href="{% url 'supplier-add' %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-truck"></i> Add Supplier</a>
+        <a href="{% url 'transaction-add' %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-arrow-left-right"></i> Record Stock Movement</a>
+      {% else %}
+        <a href="{% url 'login' %}" class="btn btn-sm btn-primary"><i class="bi bi-box-arrow-in-right"></i> Login to Edit Data</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block title %}Clean — {{ dataset.name }}{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <nav aria-label="breadcrumb" class="mb-3 fade-in">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'datasets:list' %}">Datasets</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'datasets:detail' dataset.pk %}">{{ dataset.name }}</a></li>
+            <li class="breadcrumb-item active">Clean</li>
+        </ol>
+    </nav>
+
+    <div class="page-header fade-in">
+        <h1 class="page-title"><span class="gradient-text">Clean Dataset</span></h1>
+        <p class="page-subtitle">Select operations and apply AI-powered fixes to your data</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- Operations panel -->
+        <div class="col-lg-5 fade-in fade-in-1">
+            <div class="card border-0">
+                <div class="card-header">
+                    <i class="bi bi-sliders me-2" style="color:var(--accent-1);"></i>Select Operations
+                </div>
+                <div class="card-body">
+                    <form method="post" id="cleanForm">
+                        {% csrf_token %}
+
+                        <!-- AI suggestion toggle -->
+                        <div class="p-3 rounded mb-3" style="background:var(--gradient-card-1);border:1.5px solid #c4b5fd;">
+                            <div class="form-check">
+                                {{ form.use_ai_suggestions }}
+                                <label class="form-check-label fw-600" for="{{ form.use_ai_suggestions.id_for_label }}" style="font-weight:600;color:var(--text-primary);">
+                                    {{ form.use_ai_suggestions.label }}
+                                </label>
+                                <p class="mb-0 mt-1" style="font-size:0.8rem;color:var(--text-muted);">Automatically apply AI-recommended fixes</p>
+                            </div>
+                        </div>
+
+                        <hr style="border-color:var(--border-color);">
+
+                        <p style="font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:0.75rem;">
+                            Manual Operations
+                        </p>
+                        {% for choice in form.operations %}
+                        <div class="form-check mb-2 p-2 px-3 rounded" style="background:var(--bg-body);border:1px solid var(--border-color);cursor:pointer;">
+                            {{ choice.tag }}
+                            <label class="form-check-label" for="{{ choice.id_for_label }}" style="cursor:pointer;color:var(--text-secondary);font-size:0.875rem;">
+                                {{ choice.choice_label }}
+                            </label>
+                        </div>
+                        {% endfor %}
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100 mt-4" id="cleanBtn">
+                            <i class="bi bi-brush"></i>Run Cleaning
+                        </button>
+                    </form>
+
+                    <div class="progress mt-3 d-none" id="cleanProgress" style="height:6px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggestions panel -->
+        <div class="col-lg-7 fade-in fade-in-2">
+            <div class="card border-0">
+                <div class="card-header">
+                    <i class="bi bi-robot me-2" style="color:var(--accent-2);"></i>
+                    AI Suggestions
+                    <span class="badge bg-primary ms-1">{{ suggestions|length }}</span>
+                </div>
+                <div class="card-body" style="max-height:520px;overflow-y:auto;">
+                    {% if suggestions %}
+                    {% for s in suggestions %}
+                    <div class="d-flex align-items-start gap-3 mb-3 pb-3" style="border-bottom:1px solid var(--border-color);">
+                        <span class="badge bg-{% if s.priority == 'high' %}danger{% elif s.priority == 'medium' %}warning{% else %}info{% endif %} flex-shrink-0 mt-1">
+                            {{ s.priority }}
+                        </span>
+                        <div>
+                            <div style="font-weight:600;font-size:0.875rem;color:var(--text-primary);">{{ s.type|title }}</div>
+                            <p class="mb-0" style="font-size:0.8rem;color:var(--text-muted);">{{ s.message }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="text-center py-4">
+                        <i class="bi bi-check-circle-fill" style="font-size:2.5rem;color:var(--accent-4);"></i>
+                        <p class="text-muted mt-2 mb-0">Dataset appears clean — no suggestions.</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script>
+document.getElementById('cleanForm')?.addEventListener('submit', function() {
+    const btn = document.getElementById('cleanBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Cleaning…';
+    document.getElementById('cleanProgress').classList.remove('d-none');
+});
+</script>
+{% endblock %}
+{% endblock %}

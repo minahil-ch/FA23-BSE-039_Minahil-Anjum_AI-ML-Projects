@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block page_title %}{{ candidate.full_name }}{% endblock %}
+{% block content %}
+<div class="row g-3">
+  <div class="col-lg-8">
+    <div class="card ih-card p-4 mb-3">
+      <h5>{{ candidate.full_name }} <span class="badge bg-info text-dark">{{ candidate.candidate_id }}</span></h5>
+      <p class="text-muted">{{ candidate.email }} | {{ candidate.phone_number }}</p>
+      <table class="table table-sm">
+        <tr><th>Qualification</th><td>{{ candidate.highest_qualification }} - {{ candidate.university }}</td></tr>
+        <tr><th>CGPA</th><td>{{ candidate.cgpa|default:"-" }}</td></tr>
+        <tr><th>Experience</th><td>{{ candidate.experience_years }} years</td></tr>
+        <tr><th>Preferred Dept.</th><td>{{ candidate.preferred_department|default:"-" }}</td></tr>
+        <tr><th>Technical Skills</th><td>{{ candidate.technical_skills|default:"-" }}</td></tr>
+        <tr><th>Communication Score</th><td>{{ candidate.communication_score }}/100</td></tr>
+        <tr><th>Interview Score</th><td>{{ candidate.interview_score }}/100</td></tr>
+        <tr><th>Expected Salary</th><td>{{ candidate.expected_salary|default:"-" }}</td></tr>
+        {% if candidate.resume_file %}
+        <tr><th>Resume</th><td><a href="{{ candidate.resume_file.url }}" target="_blank">Download Resume</a></td></tr>
+        {% endif %}
+      </table>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card ih-card p-4 mb-3">
+      <h6>Application Status</h6>
+      <p class="mb-2"><span class="badge bg-primary badge-status">{{ candidate.get_status_display }}</span></p>
+      <form method="post" action="{% url 'candidates:update_status' candidate.pk %}">
+        {% csrf_token %}
+        <select name="status" class="form-select mb-2">
+          {% for value, label in candidate.Status.choices %}
+          <option value="{{ value }}" {% if value == candidate.status %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+        <button class="btn btn-primary btn-sm w-100">Update Status</button>
+      </form>
+    </div>
+    {% if candidate.last_prediction %}
+    <div class="card ih-card p-4">
+      <h6>Last AI Prediction</h6>
+      <span class="badge {% if candidate.last_prediction == 'SELECTED' %}bg-success{% else %}bg-danger{% endif %}">{{ candidate.last_prediction }}</span>
+      <p class="mt-2 mb-0 small text-muted">Confidence: {{ candidate.last_prediction_probability|floatformat:0 }}%</p>
+    </div>
+    {% endif %}
+    <div class="mt-3">
+      <a href="{% url 'candidates:edit' candidate.pk %}" class="btn btn-outline-secondary w-100 mb-2">Edit Candidate</a>
+      <a href="{% url 'ml_engine:predict' %}" class="btn btn-outline-primary w-100">Run AI Prediction</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
